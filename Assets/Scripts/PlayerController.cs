@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         // Vector3 movement = new Vector3(movementX, 0.0f, movementY);
         // rb.AddForce(movement * speed);
-        animator.SetFloat("Speed", Mathf.Abs(movementX * speed));
+        animator.SetFloat("Speed", Mathf.Abs(movementX * speed ));
         rb.velocity = new Vector3(movementX * speed, rb.velocity.y, movementY * speed);
     }
 }
