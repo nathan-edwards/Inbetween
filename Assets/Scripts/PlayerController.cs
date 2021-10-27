@@ -8,18 +8,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private float movementX;
     private float movementY;
-    private Inventory inventory;
     public float speed = 1;
     public Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-    }
-
-    private void Awake()
-    {
-        inventory = new Inventory();
     }
 
     private void OnMove(InputValue movementValue)
