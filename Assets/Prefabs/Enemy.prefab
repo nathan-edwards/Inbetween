@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4716608962725429417}
   - component: {fileID: 4716608962725429431}
   - component: {fileID: 115316242}
+  - component: {fileID: 1199584460}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -42,7 +43,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4716608962725429419}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97e56b4da69fd4516a08b744fa7dbb1d, type: 3}
   m_Name: 
@@ -75,10 +76,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 7f4ab89b2a480874996bd235fa64baa8, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.28102565
-  m_Height: 0.92614746
-  m_Direction: 0
-  m_Center: {x: -0.0725708, y: 0, z: 0.59313965}
+  m_Radius: 0.19754028
+  m_Height: 0.82772285
+  m_Direction: 1
+  m_Center: {x: -0.1081543, y: -0.017917782, z: 0.54751587}
 --- !u!95 &115316242
 Animator:
   serializedVersion: 3
@@ -98,6 +99,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1199584460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4716608962725429419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b03397ab436f448e9a579fcfee0205e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rb: {fileID: 4716608962725429417}
+  moveSpeed: 0.5
+  move: {x: 0, y: 0, z: 0}
 --- !u!1 &4716608963385934373
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,9 +10,6 @@ public class controlsMovement : MonoBehaviour
     
     void Update()
     {
-        // move.z=Input.GetAxisRaw("Vertical");
-        // move.x=Input.GetAxisRaw("Horizontal");
-        // move.y=0;
         move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
     }
