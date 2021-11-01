@@ -6,13 +6,15 @@ using UnityEngine;
 public class CollectHealthItem : MonoBehaviour
 {
     void OnTriggerEnter(Collider other){
-		PlayerController p = other.GetComponent<PlayerController>();
+		controlsMovement p = other.GetComponent<controlsMovement>();
 
 		if(p != null){
 			p.UpdateHealth(10);
-
+			print("got health potion");
 			//test
 			Destroy(gameObject);
+		} else{
+			print("it is null");
 		}
 	}
 }

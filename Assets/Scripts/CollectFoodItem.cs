@@ -6,7 +6,7 @@ using UnityEngine;
 public class CollectFoodItem : MonoBehaviour
 {
     void OnTriggerEnter(Collider other){
-		PlayerController p = other.GetComponent<PlayerController>();
+		controlsMovement p = other.GetComponent<controlsMovement>();
 
 		if(p != null){
 			p.UpdateHunger(10);
