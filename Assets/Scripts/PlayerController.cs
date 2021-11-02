@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 		health = maxHealth;
 		hunger = maxHunger;
 		//change timing later
-		InvokeRepeating("starve", 5.0f, 0.5f);
+		InvokeRepeating("Starve", 5.0f, 0.5f);
     }
 
     private void OnMove(InputValue movementValue)
@@ -49,6 +49,9 @@ public class PlayerController : MonoBehaviour
 		//update health &
 		//make sure health doesn't go above max or below min
 		health = Mathf.Clamp(health + d, 0, maxHealth);
+
+		//update health bar
+		HealthBar.instance.updateHealthBar(health);
 		
 		//test
 		Debug.Log(health + "/" + maxHealth);
@@ -61,6 +64,9 @@ public class PlayerController : MonoBehaviour
 		hunger -= 5;
 		hunger = Mathf.Clamp(hunger, 0, maxHunger);
 		Debug.Log(hunger + "/" + maxHunger);
+
+		//update hunger bar
+		HungerBar.instance.updateHungerBar(hunger);
 	}
 
 	//jay was here: adding update hunger function
@@ -68,6 +74,9 @@ public class PlayerController : MonoBehaviour
 		//update hunger &
 		//make sure hunger doesn't go above max or below min
 		hunger = Mathf.Clamp(hunger + d, 0, maxHunger);
+
+		//update hunger bar
+		HungerBar.instance.updateHungerBar(hunger);
 
 		//test
 		Debug.Log(hunger + "/" + maxHunger);

@@ -13,16 +13,16 @@ public class controlsMovement : MonoBehaviour
     //jay was here: adding health & hunger
     private int health;
     public int maxHealth = 100;
-    public int hunger;
+    private int hunger;
     public int maxHunger = 100;
     
-    void start(){
+    void Start(){
         //jay was here - set health and hunger to max at start of game
         // & make player starve periodically/lose hunger at set intervals
         health = maxHealth;
         hunger = maxHunger;
         //change timing later
-        InvokeRepeating("starve", 5.0f, 0.5f);
+        InvokeRepeating("Starve", 5.0f, 0.5f);
     }
     ///
 
@@ -41,6 +41,9 @@ public class controlsMovement : MonoBehaviour
         //update health &
         //make sure health doesn't go above max or below min
         health = Mathf.Clamp(health + d, 0, maxHealth);
+
+		//update health bar
+		HealthBar.instance.updateHealthBar(health);
         
         //test
         Debug.Log(health + "/" + maxHealth);
