@@ -44,4 +44,16 @@ public class follower : MonoBehaviour
         }
 
     }
+
+	//jieying was here: function for player to take damage when gets into contact with enemy
+	void OnCollisionEnter(Collision x){
+		//get player
+		controlsMovement p = x.gameObject.GetComponent<controlsMovement>();
+
+		//update player health with damage taken
+		if(p != null){
+			p.UpdateHealth(-10);
+			Debug.Log("ouch");
+		}
+	}
 }

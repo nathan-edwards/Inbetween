@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//jay was here: making health bar UI change according to player health
+//jieying was here: making health bar UI change according to player health
 public class HealthBar : MonoBehaviour
 {
 	//image used to make health bar in unity
