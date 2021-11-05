@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//jay was here: making hunger bar UI change according to player hunger
+//jieying was here: making hunger bar UI change according to player hunger
 public class HungerBar : MonoBehaviour
 {
 	//image used to make hunger bar in unity
