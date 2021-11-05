@@ -75,7 +75,7 @@ public class controlsMovement : MonoBehaviour
 			//update hunger bar UI
 			HungerBar.instance.updateHungerBar(hunger);
 
-			// Debug.Log("hunger: " + hunger + "/" + maxHunger);
+			Debug.Log("hunger: " + hunger + "/" + maxHunger);
 		}
     }
 
@@ -110,7 +110,7 @@ public class controlsMovement : MonoBehaviour
 
     ///
     public void printHealth(){
-        Debug.Log("Your health is: "+ health);
+        // Debug.Log("Your health is: "+ health);
     }
 
 	//jieying was here: check if player should die yet
@@ -122,14 +122,6 @@ public class controlsMovement : MonoBehaviour
 		}
 	}
 
-    // stop the player from moving when touches an object
-    //     void OnCollisionEnter(Collision collision) 
-    // {
-    //         if(collision.gameObject.name == "YourWallName")  // or if(gameObject.CompareTag("YourWallTag"))
-    //         {
-    //                     rigidbody.velocity = Vector3.zero;
-    //         }
-    // }
 }
 
 
