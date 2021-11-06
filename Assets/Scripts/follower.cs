@@ -16,7 +16,7 @@ public class follower : MonoBehaviour
     void Start()
     {
         rb=this.GetComponent<Rigidbody>();
-        pushback= new Vector3(1,0,0);
+        pushback= new Vector3(10,0,0);
     }
 
     // Update is called once per frame
@@ -52,13 +52,13 @@ public class follower : MonoBehaviour
 
 		//update player health with damage taken
 		if(p != null){
-			p.UpdateHealth(-10);
+			p.UpdateHealth(-3);
 			// Debug.Log("ouch");
 		}
 
         if (x.gameObject.name == "player_improved"){
             Debug.Log("player and enemy touch");
-            rb.velocity = new Vector3(1, 0, 1);
+            rb.velocity = new Vector3(10, 0, 10);
             // transform.position= transform.position - pushback;
         }
 	}
