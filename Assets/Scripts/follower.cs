@@ -25,7 +25,6 @@ public class follower : MonoBehaviour
         //roation towards player
         Vector3 direction = player.position -transform.position;
         distanceToPlayer= Vector3.Distance(transform.position, player.position);
-        Debug.Log("pos of enemy is"+ transform.position);
         move=direction;
        
     
@@ -38,7 +37,6 @@ public class follower : MonoBehaviour
     void moveCharacter(Vector3 direction, float distanceToPlayer){
         //when player is close to the attack range enemy should move towards it 
         if (distanceToPlayer <= attackRange){ 
-           // print("nice we moving");
             rb.MovePosition(transform.position +(direction * moveSpeed * Time.deltaTime));
             
         }
@@ -53,13 +51,10 @@ public class follower : MonoBehaviour
 		//update player health with damage taken
 		if(p != null){
 			p.UpdateHealth(-3);
-			// Debug.Log("ouch");
 		}
 
         if (x.gameObject.name == "player_improved"){
-            Debug.Log("player and enemy touch");
             rb.velocity = new Vector3(10, 0, 10);
-            // transform.position= transform.position - pushback;
         }
 	}
 }

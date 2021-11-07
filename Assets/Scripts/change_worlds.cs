@@ -21,13 +21,11 @@ public class change_worlds : MonoBehaviour
 
     private void OnCollisionEnter( Collision x){
         if (x.gameObject.name == "portal"){
-            // SceneManager.MoveGameObjectToScene(player, 0);
-            print("yayy");
-            // DontDestroyOnLoad(x.gameObject);
-            // Scene sceneToLoad = SceneManager.GetSceneByName("jay_is_here");
-            // SceneManager.MoveGameObjectToScene(x.gameObject, 'jay_is_here');
-            SceneManager.LoadScene("jay_is_here");
-            player.position= new Vector3(223,5,109);
+            SceneManager.LoadScene("Biome 2");
+            player.position= new Vector3(209,1,120);
+            print("yayyyy");
+        }else{
+            print("oh nooo");
         }
     }
 }
