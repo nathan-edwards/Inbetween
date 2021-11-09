@@ -13,8 +13,8 @@ public class controlsMovement : MonoBehaviour
     //jieying was here: adding health & hunger
     private int health;
     public int maxHealth = 100;
-    private int hunger;
-    public int maxHunger = 100;
+    private float hunger;
+    public float maxHunger = 100;
 
 	//jieying was here: variables for timer & wait time respectively
 	//feel free to change wait time (t2)
@@ -70,7 +70,7 @@ public class controlsMovement : MonoBehaviour
 		if(isAlive){
 			// hunger -= 5;
 			// hunger = Mathf.Clamp(hunger, 0, maxHunger);
-			UpdateHunger(-1);
+			UpdateHunger(-0.5f);
 
 			//update hunger bar UI
 			HungerBar.instance.updateHungerBar(hunger);
@@ -80,7 +80,7 @@ public class controlsMovement : MonoBehaviour
     }
 
     //jieying was here: adding update hunger function
-    public void UpdateHunger(int d){
+    public void UpdateHunger(float d){
         //update hunger &
         //make sure hunger doesn't go above max or below min
         hunger = Mathf.Clamp(hunger + d, 0, maxHunger);
