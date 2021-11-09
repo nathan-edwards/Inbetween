@@ -117,8 +117,9 @@ public class controlsMovement : MonoBehaviour
 	void checkAliveStatus(){
 		if(health == 0){
 			isAlive = false;
-			Destroy(this.gameObject);
+			FindObjectOfType<GameOver>().displayGameOver();
 			Debug.Log("Player dead");
+			Destroy(this.gameObject);
 		}
 	}
 

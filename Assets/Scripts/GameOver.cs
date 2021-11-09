@@ -5,7 +5,13 @@ using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
+
+	public Image img;
+	bool gameEnd = false;
     public void displayGameOver(){
-		gameObject.SetActive(true);
+		if(!gameEnd){
+			gameEnd = true;
+			img.gameObject.SetActive(true);
+		}
 	}
 }
