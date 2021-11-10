@@ -70,7 +70,7 @@ public class controlsMovement : MonoBehaviour
 		if(isAlive){
 			// hunger -= 5;
 			// hunger = Mathf.Clamp(hunger, 0, maxHunger);
-			UpdateHunger(-0.5f);
+			UpdateHunger(-0.1f);
 
 			//update hunger bar UI
 			HungerBar.instance.updateHungerBar(hunger);

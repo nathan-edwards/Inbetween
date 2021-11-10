@@ -50,7 +50,7 @@ public class follower : MonoBehaviour
 
 		//update player health with damage taken
 		if(p != null){
-			p.UpdateHealth(-3);
+			p.UpdateHealth(-1);
 		}
 
         if (x.gameObject.name == "player_improved"){
