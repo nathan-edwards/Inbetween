@@ -68,8 +68,6 @@ public class controlsMovement : MonoBehaviour
 	//invokerepeating can't take functions with arguments :(
     void Starve(){
 		if(isAlive){
-			// hunger -= 5;
-			// hunger = Mathf.Clamp(hunger, 0, maxHunger);
 			UpdateHunger(-0.1f);
 
 			//update hunger bar UI
@@ -115,6 +113,7 @@ public class controlsMovement : MonoBehaviour
 
 	//jieying was here: check if player should die yet
 	void checkAliveStatus(){
+		//if player dies then end game
 		if(health == 0){
 			isAlive = false;
 			FindObjectOfType<GameOver>().displayGameOver();

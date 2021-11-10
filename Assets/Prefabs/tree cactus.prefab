@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5626978673525411919}
   - component: {fileID: 8770989931106492394}
   - component: {fileID: 6799353066080545568}
+  - component: {fileID: -8099499804751039242}
   m_Layer: 0
   m_Name: tree cactus
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-8099499804751039242
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4998111471534476021}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4711208715938537054, guid: be3f015d15ab1f741bdc7ade59ee6232, type: 3}
