@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7493373810817102947}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.046, y: -0.364, z: 0.581}
-  m_LocalScale: {x: 0.5897931, y: 0.6069798, z: 1.6386}
+  m_LocalPosition: {x: -0.094, y: 0.137, z: 0.536}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7493373812551022320}
   m_RootOrder: 0
@@ -71,12 +71,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300006, guid: 0409f2fddf07780408257c186ab69681, type: 3}
-  m_Color: {r: 0.28344828, g: 1, b: 0.033018887, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 395f6b9556f14704790df6035be6ee3a, type: 3}
+  m_Color: {r: 0.84396374, g: 0.6462264, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2776765056126459988}
   m_Layer: 0
   m_Name: player_improved
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7493373812551022317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1949.851, y: 0.428, z: 1114.341}
+  m_LocalPosition: {x: 1949.851, y: 0.428, z: 1114.33}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 7493373810817102948}
@@ -131,9 +131,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   rb: {fileID: 7493373812551022319}
+  player: {fileID: 0}
+  E: {fileID: 0}
   animator: {fileID: 0}
   maxHealth: 100
   maxHunger: 100
+  healthBar: {fileID: 0}
+  hungerBar: {fileID: 0}
 --- !u!54 &7493373812551022319
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -160,10 +164,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 7f4ab89b2a480874996bd235fa64baa8, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.28102565
-  m_Height: 0.92614746
-  m_Direction: 0
-  m_Center: {x: -0.0725708, y: 0, z: 0.59313965}
+  m_Radius: 0.121765435
+  m_Height: 0.8000001
+  m_Direction: 1
+  m_Center: {x: -0.099999994, y: 0.100000024, z: 0.55}
 --- !u!95 &2776765056126459988
 Animator:
   serializedVersion: 3

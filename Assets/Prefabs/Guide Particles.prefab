@@ -1304,8 +1304,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.3160377, b: 0.3160377, a: 1}
-        key1: {r: 0.9803575, g: 1, b: 0.5896226, a: 1}
+        key0: {r: 0.66225296, g: 0.3176471, b: 1, a: 1}
+        key1: {r: 1, g: 0.72629863, b: 0.5882353, a: 1}
         key2: {r: 1, g: 1, b: 1, a: 0}
         key3: {r: 1, g: 1, b: 1, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4817,6 +4817,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d190f1b7cfc744b802870710d92ca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1320872636616895170, guid: ed6d7c66c9b724a68b16b690a10f2d5a, type: 3}
-  player: {fileID: 0}
   speed: 5
