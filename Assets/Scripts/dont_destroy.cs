@@ -10,9 +10,13 @@ public class dont_destroy : MonoBehaviour
         
     }
     public Transform player;
+
+	//the UI - health, hunger, game over screen - to preserve between biomes
+	public GameObject canvas;
     // Update is called once per frame
     void Update()
     {
-        DontDestroyOnLoad(player.gameObject); 
+        DontDestroyOnLoad(player.gameObject);
+		DontDestroyOnLoad(canvas);
     }
 }

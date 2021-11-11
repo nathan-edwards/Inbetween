@@ -6,13 +6,17 @@ using UnityEngine;
 public class CollectFoodItem : MonoBehaviour
 {
     void OnTriggerEnter(Collider other){
+		//get player
 		controlsMovement p = other.GetComponent<controlsMovement>();
 
-		if(p != null){
+		//check if it's player and update health it is
+		if(other.gameObject.tag == "Player"){
 			p.UpdateHunger(10);
 
-			//test
+			//then destroy food item collected
 			Destroy(this.gameObject);
+		} else {
+			print("it is null");
 		}
 	}
 }

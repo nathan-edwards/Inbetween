@@ -6,14 +6,16 @@ using UnityEngine;
 public class CollectHealthItem : MonoBehaviour
 {
     void OnTriggerEnter(Collider other){
+		//get player
 		controlsMovement p = other.GetComponent<controlsMovement>();
 
-		if(p != null){
+		//check if it's player and update health if it is
+		if(other.gameObject.tag == "Player"){
 			p.UpdateHealth(10);
-			print("got health potion");
-			//test
+
+			//then destroy collectible health item
 			Destroy(this.gameObject);
-		} else{
+		} else {
 			print("it is null");
 		}
 	}

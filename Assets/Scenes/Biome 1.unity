@@ -2203,7 +2203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7493373812551022317, guid: f914be994307743c5b8c21627c63bd9f, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7493373812551022318, guid: f914be994307743c5b8c21627c63bd9f, type: 3}
       propertyPath: maxHunger
@@ -9898,6 +9898,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6847149101942893317, guid: 0fdaa646247706147a7061e71f08601f, type: 3}
   m_PrefabInstance: {fileID: 912213373}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &923989393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8923431170052003906, guid: b311762f2a7724adf87bfb47151253b3, type: 3}
+  m_PrefabInstance: {fileID: 1929991795}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &933324424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14869,6 +14874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 177729728}
+  canvas: {fileID: 923989393}
 --- !u!1001 &1317988616
 PrefabInstance:
   m_ObjectHideFlags: 0

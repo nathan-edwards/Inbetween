@@ -13,11 +13,14 @@ public class controlsMovement : MonoBehaviour
     public follower E;
     public Animator animator;
 
-    //jieying was here: adding health & hunger
+    //jieying was here: adding health & hunger & their respective UI elements
     private int health;
     public int maxHealth = 100;
     private float hunger;
     public float maxHunger = 100;
+
+	public HealthBar healthBar;
+	public HungerBar hungerBar;
 
 	//jieying was here: variables for timer & wait time respectively
 	//feel free to change wait time (t2)
@@ -30,9 +33,14 @@ public class controlsMovement : MonoBehaviour
     
     void Start(){
         //jieying was here: set health and hunger to max at start of game
+		// & find health and hunger UI elements
         // & make player starve periodically/lose hunger at set intervals
         health = maxHealth;
         hunger = maxHunger;
+
+		healthBar = FindObjectOfType<HealthBar>();
+		hungerBar = FindObjectOfType<HungerBar>();
+
         //change timing later
         InvokeRepeating("Starve", 5.0f, 0.5f);
 		isAlive = true;
@@ -63,7 +71,7 @@ public class controlsMovement : MonoBehaviour
     }
 
     void checkIfFalling(){
-        if(rb.position.y < -10){
+        if(rb.position.y < 0){
             print(rb.position.y);
             UpdateHunger(-100f);
             UpdateHealth(-100);
@@ -90,7 +98,7 @@ public class controlsMovement : MonoBehaviour
         //make sure health doesn't go above max or below min
         health = Mathf.Clamp(health + d, 0, maxHealth);
 		//update health bar
-		HealthBar.instance.updateHealthBar(health);
+		healthBar.updateHealthBar(health);
     }
 
     //jieying was here: function to make player starve/lose hunger
@@ -98,7 +106,7 @@ public class controlsMovement : MonoBehaviour
 		if(isAlive){
 			UpdateHunger(-0.1f);
 			//update hunger bar UI
-			HungerBar.instance.updateHungerBar(hunger);
+			hungerBar.updateHungerBar(hunger);
 		}
     }
 
@@ -107,7 +115,7 @@ public class controlsMovement : MonoBehaviour
         //make sure hunger doesn't go above max or below min
         hunger = Mathf.Clamp(hunger + d, 0, maxHunger);
 		//update hunger bar
-		HungerBar.instance.updateHungerBar(hunger);
+		hungerBar.updateHungerBar(hunger);
     }
 
 	//jieying was here: function to deplete player health when hunger is at 0
@@ -126,18 +134,18 @@ public class controlsMovement : MonoBehaviour
 			//probably not the best fix but this helps transferring health from biome 1 over to biome 2
 			//otherwise health ui will show as full in biome 2 even though the value of player's current health might not be 100%
 			//will make ui display as current health
+			//since depleteHealth() gets called in update, it will draw hence temporary fix
 			UpdateHealth(0);
 		}
 	}
 
 	//jieying was here: check if player should die yet
 	void checkAliveStatus(){
-		//if player dies then end game
+		//if player dies then end game and do the end game related things like show game over screen
 		if(health <= 0){
 			isAlive = false;
 			FindObjectOfType<GameOver>().displayGameOver();
 			Debug.Log("Player dead");
-			// Destroy(this.gameObject);
 		}
 	}
 
