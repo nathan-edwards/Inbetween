@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class follower : MonoBehaviour
 {
-    public Transform player;
     public Rigidbody rb;
     public float moveSpeed = 5f;
     public Vector3 move;
@@ -23,9 +22,10 @@ public class follower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 player = GameObject.FindGameObjectsWithTag("Player")[0].transform.position;
         //roation towards player
-        Vector3 direction = player.position -transform.position;
-        distanceToPlayer= Vector3.Distance(transform.position, player.position);
+        Vector3 direction = player -transform.position;
+        distanceToPlayer= Vector3.Distance(transform.position, player);
         move=direction;
         checkAlive();
        
