@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class GameWin : MonoBehaviour
 {
 
-    //to get game over screen
+    //Selects which Canvas object to interact with
     public Image img;
 
-    //to check if game ended
+    //Variable for use by other scripts and functions to know the game has ended
     bool gameWin = false;
 
-    //game over screen is hidden in unity so function to set screen to active/visible when game has ended
+    //Game win screen is hidden in unity so function to set screen to active/visible when game has ended
     public void displayGameWin(){
         if(!gameWin){
             gameWin = true;

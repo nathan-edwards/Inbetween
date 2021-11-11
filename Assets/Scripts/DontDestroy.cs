@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-    public Transform player;
+	public Transform player;
 
 	//the UI - health, hunger, game over screen - to preserve between biomes
 	public GameObject canvas;
