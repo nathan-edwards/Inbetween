@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class controlsMovement : MonoBehaviour
+public class ControlsMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Rigidbody rb;
     Vector3 move;
     public Transform player;
-    public follower E;
+    public Follower E;
     public Animator animator;
 
     //jieying was here: adding health & hunger & their respective UI elements

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class follower : MonoBehaviour
+public class Follower : MonoBehaviour
 {
     public Rigidbody rb;
     public float moveSpeed = 5f;
@@ -41,7 +41,7 @@ public class follower : MonoBehaviour
         moveCharacter(move, distanceToPlayer);
     }
 
-    public void updateHealthE(){
+    public void UpdateHealthE(){
         health=health-10;
         print(health);
     }
@@ -56,7 +56,7 @@ public class follower : MonoBehaviour
 	//function for player to take damage when gets into contact with enemy
 	void OnCollisionEnter(Collision x){
 		//get player
-		controlsMovement p = x.gameObject.GetComponent<controlsMovement>();
+		ControlsMovement p = x.gameObject.GetComponent<ControlsMovement>();
 
 		//update player health with damage taken
 		if(p != null){

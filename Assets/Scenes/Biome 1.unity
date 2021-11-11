@@ -1412,15 +1412,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1320872636616895170, guid: ed6d7c66c9b724a68b16b690a10f2d5a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 587.8
+      value: 561.4
       objectReference: {fileID: 0}
     - target: {fileID: 1320872636616895170, guid: ed6d7c66c9b724a68b16b690a10f2d5a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.4
+      value: 46.18
       objectReference: {fileID: 0}
     - target: {fileID: 1320872636616895170, guid: ed6d7c66c9b724a68b16b690a10f2d5a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 553.6
+      value: 786.98
       objectReference: {fileID: 0}
     - target: {fileID: 1320872636616895170, guid: ed6d7c66c9b724a68b16b690a10f2d5a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3525,8 +3525,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.00030517578}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -7.7184, y: -36.2444}
+  m_SizeDelta: {x: 175.4369, y: 102.4882}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &277967411
 MonoBehaviour:
@@ -3541,7 +3541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.582276, g: 0.105731584, b: 0.6792453, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8774,8 +8774,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.2932014, y: -1.3417015}
-  m_SizeDelta: {x: 1083.0095, y: 465.8628}
+  m_AnchoredPosition: {x: -0.6427994, y: 1.2883987}
+  m_SizeDelta: {x: 1015.4636, y: 527.9526}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &789444628
 MonoBehaviour:
@@ -8790,7 +8790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.26815593, g: 0.4339623, b: 0.3091761, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -24973,7 +24973,6 @@ GameObject:
   - component: {fileID: 1811457398}
   - component: {fileID: 1811457397}
   - component: {fileID: 1811457396}
-  - component: {fileID: 1811457399}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -25046,20 +25045,6 @@ Transform:
   m_Father: {fileID: 177729728}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 21.593, y: 0, z: 0}
---- !u!114 &1811457399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811457395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba43739590b4c234886648b89a4ec990, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  offset: {x: 0, y: 12.5, z: -12.5}
 --- !u!1001 &1819118931
 PrefabInstance:
   m_ObjectHideFlags: 0

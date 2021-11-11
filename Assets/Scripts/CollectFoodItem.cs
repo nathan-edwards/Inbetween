@@ -7,7 +7,7 @@ public class CollectFoodItem : MonoBehaviour
 {
     void OnTriggerEnter(Collider other){
 		//get player
-		controlsMovement p = other.GetComponent<controlsMovement>();
+		ControlsMovement p = other.GetComponent<ControlsMovement>();
 
 		//check if it's player and update health it is
 		if(other.gameObject.tag == "Player"){
