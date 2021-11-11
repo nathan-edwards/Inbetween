@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class controlsMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Rigidbody rb;
     Vector3 move;
-
+    public Transform player;
+    public follower E;
     public Animator animator;
 
     //jieying was here: adding health & hunger
@@ -32,62 +35,79 @@ public class controlsMovement : MonoBehaviour
         hunger = maxHunger;
         //change timing later
         InvokeRepeating("Starve", 5.0f, 0.5f);
-
 		isAlive = true;
     }
-    ///
 
     void Update()
     {
         move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-
-		//jieying was here: when hunger has reached 0, begin a timer that will make player lose health at set intervals
+		//when hunger has reached 0, begin a timer that will make player lose health at set intervals
 		depleteHealth();
 		checkAliveStatus();
+        checkIfFalling();
+        
+    }
+
+    public void OnMouseDown(){
+            // this object was clicked - do something
+            // if (this.gameObject.name == "Enemy1"){
+            //     Destroy(this.gameObject);
+            //     E.updateHealthE();
+            //     print("touched enemy1");
+            // }else{
+            //     print("something else");
+            // }
+        Destroy (this.gameObject);
+        print("niceeee");
+        
+    }
+
+    void checkIfFalling(){
+        if(rb.position.y < -10){
+            print(rb.position.y);
+            UpdateHunger(-100f);
+            UpdateHealth(-100);
+            UpdateHunger(-100.0f);
+            Destroy(this.gameObject);
+            // FindObjectOfType<GameOver>().displayGameOver();
+            StartCoroutine(waiter());
+            Application.LoadLevel("Biome 1");
+        }
     }
 
     void FixedUpdate(){
         rb.MovePosition(rb.position + move * moveSpeed * Time.fixedDeltaTime);
     }
 
-    //jieying was here: adding update health function
-    public void UpdateHealth(int d){
-        //update health &
-        //make sure health doesn't go above max or below min
-        health = Mathf.Clamp(health + d, 0, maxHealth);
-
-		//update health bar
-		HealthBar.instance.updateHealthBar(health);
-        
-        //test
-        Debug.Log("health: " + health + "/" + maxHealth);
+    IEnumerator waiter()
+    {
+        //Wait for 4 seconds
+        yield return new WaitForSeconds(10);
     }
 
+    //jieying was here: adding update health function
+    public void UpdateHealth(int d){
+        //make sure health doesn't go above max or below min
+        health = Mathf.Clamp(health + d, 0, maxHealth);
+		//update health bar
+		HealthBar.instance.updateHealthBar(health);
+    }
 
     //jieying was here: function to make player starve/lose hunger
-	//invokerepeating can't take functions with arguments :(
     void Starve(){
 		if(isAlive){
 			UpdateHunger(-0.1f);
-
 			//update hunger bar UI
 			HungerBar.instance.updateHungerBar(hunger);
-
-			Debug.Log("hunger: " + hunger + "/" + maxHunger);
 		}
     }
 
     //jieying was here: adding update hunger function
     public void UpdateHunger(float d){
-        //update hunger &
         //make sure hunger doesn't go above max or below min
         hunger = Mathf.Clamp(hunger + d, 0, maxHunger);
-
 		//update hunger bar
 		HungerBar.instance.updateHungerBar(hunger);
-
-        //test
-        Debug.Log("hunger: " + hunger + "/" + maxHunger);
     }
 
 	//jieying was here: function to deplete player health when hunger is at 0
@@ -106,19 +126,14 @@ public class controlsMovement : MonoBehaviour
 		}
 	}
 
-    ///
-    public void printHealth(){
-        // Debug.Log("Your health is: "+ health);
-    }
-
 	//jieying was here: check if player should die yet
 	void checkAliveStatus(){
 		//if player dies then end game
-		if(health == 0){
+		if(health <= 0){
 			isAlive = false;
 			FindObjectOfType<GameOver>().displayGameOver();
 			Debug.Log("Player dead");
-			Destroy(this.gameObject);
+			// Destroy(this.gameObject);
 		}
 	}
 

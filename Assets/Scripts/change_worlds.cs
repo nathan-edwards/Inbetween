@@ -22,10 +22,7 @@ public class change_worlds : MonoBehaviour
     private void OnCollisionEnter( Collision x){
         if (x.gameObject.name == "portal"){
             SceneManager.LoadScene("Biome 2");
-            player.position= new Vector3(401,1,15);
-            print("yayyyy");
-        }else{
-            print("oh nooo");
+            player.position= new Vector3(401,33,15);
         }
     }
 }

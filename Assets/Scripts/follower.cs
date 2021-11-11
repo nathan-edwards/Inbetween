@@ -11,6 +11,7 @@ public class follower : MonoBehaviour
     public float attackRange;
     public float distanceToPlayer;
     public Vector3 pushback;
+    public int health=50;
 
     // Start is called before the first frame update
     void Start()
@@ -26,24 +27,33 @@ public class follower : MonoBehaviour
         Vector3 direction = player.position -transform.position;
         distanceToPlayer= Vector3.Distance(transform.position, player.position);
         move=direction;
+        checkAlive();
        
-    
+    }
+
+    void checkAlive(){
+        if (health<=0){
+            Destroy(this.gameObject);
+        }
     }
 
     private void FixedUpdate(){
         moveCharacter(move, distanceToPlayer);
     }
 
+    public void updateHealthE(){
+        health=health-10;
+        print(health);
+    }
+
     void moveCharacter(Vector3 direction, float distanceToPlayer){
         //when player is close to the attack range enemy should move towards it 
         if (distanceToPlayer <= attackRange){ 
             rb.MovePosition(transform.position +(direction * moveSpeed * Time.deltaTime));
-            
         }
-
     }
 
-	//jieying was here: function for player to take damage when gets into contact with enemy
+	//function for player to take damage when gets into contact with enemy
 	void OnCollisionEnter(Collision x){
 		//get player
 		controlsMovement p = x.gameObject.GetComponent<controlsMovement>();
