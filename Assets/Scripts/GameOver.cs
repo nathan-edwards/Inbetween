@@ -13,7 +13,7 @@ public class GameOver : MonoBehaviour
 	//to check if game ended
 	bool gameEnd = false;
 
-	//game over screen is hidden in unity so function to set screen to active when game has ended
+	//game over screen is hidden in unity so function to set screen to active/visible when game has ended
     public void displayGameOver(){
 		if(!gameEnd){
 			gameEnd = true;

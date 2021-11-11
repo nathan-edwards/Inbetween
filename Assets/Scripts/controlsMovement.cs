@@ -123,6 +123,10 @@ public class controlsMovement : MonoBehaviour
 			}
 		} else {
 			t1 = 0;
+			//probably not the best fix but this helps transferring health from biome 1 over to biome 2
+			//otherwise health ui will show as full in biome 2 even though the value of player's current health might not be 100%
+			//will make ui display as current health
+			UpdateHealth(0);
 		}
 	}
 

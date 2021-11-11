@@ -12,7 +12,7 @@ public class CollectHealthItem : MonoBehaviour
 			p.UpdateHealth(10);
 			print("got health potion");
 			//test
-			Destroy(gameObject);
+			Destroy(this.gameObject);
 		} else{
 			print("it is null");
 		}
