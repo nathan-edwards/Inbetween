@@ -6,7 +6,7 @@ public class Fox_Move : MonoBehaviour {
 
     public float speed,jumpForce,cooldownHit;
 	public bool running,up,down,jumping,crouching,dead,attacking,special;
-    private Rigidbody2D rb;
+    private Rigidbody rb;
     private Animator anim;
 	private SpriteRenderer sp;
 	private float rateOfHit;
@@ -16,7 +16,7 @@ public class Fox_Move : MonoBehaviour {
 	public float moveSpeed = 5f;
 
 	void Start () {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
 		sp=GetComponent<SpriteRenderer>();
 		running=false;
@@ -31,12 +31,8 @@ public class Fox_Move : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
-             {
-                 float hori = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
-                 transform.Translate(new Vector3(hori, 0f, 0f));
-             }
-        else if (Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5f)
+		
+        if (Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5f)
              {
                  float vert = Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime;
                  transform.Translate(new Vector3( 0f, 0f, vert));
@@ -61,13 +57,14 @@ public class Fox_Move : MonoBehaviour {
 	void Movement(){
 		//Character Move
 		float move = Input.GetAxisRaw("Horizontal");
+		float vert = Input.GetAxisRaw("Vertical");
 		if(Input.GetKey(KeyCode.Z)){
 			//Run
-			rb.velocity = new Vector2(move*speed*Time.deltaTime*3,rb.velocity.y);
+			rb.velocity = new Vector3(move*speed*Time.deltaTime*3,rb.velocity.y, vert);
 			running=true;
 		}else{
 			//Walk
-			rb.velocity = new Vector2(move*speed*Time.deltaTime,rb.velocity.y);
+			rb.velocity = new Vector3(move*speed*Time.deltaTime,rb.velocity.y, vert);
 			running=false;
 		}
 
@@ -88,12 +85,16 @@ public class Fox_Move : MonoBehaviour {
 		}else{
 			anim.SetBool("Running",false);
 		}
+
+		if(rb.velocity.z!=0&&running==false){
+			anim.SetBool("Walking",true);
+		}
 	}
 
 	void Jump(){
 		//Jump
-		if(Input.GetKeyDown(KeyCode.X)&&rb.velocity.y==0){
-			rb.AddForce(new Vector2(0,jumpForce));
+		if(Input.GetKeyDown(KeyCode.Space)&&rb.velocity.y==0){
+			rb.AddForce(new Vector3(0,jumpForce,0));
 
 		}
 		//Jump Animation
@@ -115,8 +116,8 @@ public class Fox_Move : MonoBehaviour {
 
 	void Attack(){																//I activated the attack animation and when the 
 		//Atacking																//animation finish the event calls the AttackEnd()
-		if(Input.GetKeyDown(KeyCode.C)){
-			rb.velocity=new Vector2(0,0);
+		if(Input.GetKeyDown(KeyCode.X)){
+			rb.velocity=new Vector3(0,0,0);
 			anim.SetTrigger("Attack");
 			attacking=true;
 		}
@@ -127,7 +128,7 @@ public class Fox_Move : MonoBehaviour {
 	}
 
 	void Special(){
-		if(Input.GetKey(KeyCode.Space)){
+		if(Input.GetKey(KeyCode.F)){
 			anim.SetBool("Special",true);
 		}else{
 			anim.SetBool("Special",false);
@@ -136,21 +137,21 @@ public class Fox_Move : MonoBehaviour {
 
 	void Crouch(){
 		//Crouch
-		if(Input.GetKey(KeyCode.DownArrow)){
+		if(Input.GetKey(KeyCode.C)){
 			anim.SetBool("Crouching",true);
 		}else{
 			anim.SetBool("Crouching",false);
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other){							//Case of Bullet
+	void OnTriggerEnter(Collider other){							//Case of Bullet
 		if(other.tag=="Enemy"){
 			anim.SetTrigger("Damage");
 			Hurt();
 		}
 	}								
 
-	void OnCollisionEnter2D(Collision2D other) {						//Case of Touch
+	void OnCollisionEnter(Collision other) {						//Case of Touch
 		if(other.gameObject.tag=="Enemy"){
 			anim.SetTrigger("Damage");
 			Hurt();
@@ -160,17 +161,19 @@ public class Fox_Move : MonoBehaviour {
 	void Hurt(){
 		if(rateOfHit<Time.time){
 			rateOfHit=Time.time+cooldownHit;
-			Destroy(life[qtdLife-1]);
-			qtdLife-=1;
+			// Destroy(life[qtdLife-1]);
+			qtdLife -=1;
 		}
 	}
 
 	void Dead(){
-		if(qtdLife<=0){
-			anim.SetTrigger("Dead");
-			dead=true;
+		// here add code on how it can be killed
 
-		}
+		// if(qtdLife<=0){
+		// 	anim.SetTrigger("Dead");
+		// 	dead=true;
+
+		// }
 	}
 
 	public void TryAgain(){														//Just to Call the level again
