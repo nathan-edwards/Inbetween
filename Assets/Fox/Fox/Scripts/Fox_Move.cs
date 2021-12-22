@@ -39,8 +39,8 @@ public class Fox_Move : MonoBehaviour {
              }
 
 		if(dead==false){
-		//Character doesnt choose direction in Jump									//If you want to choose direction in jump
-			if(attacking==false){													//just delete the (jumping==false)
+		//preventing character to change direction in Jump									
+			if(attacking==false){													
 				if(jumping==false&&crouching==false){
 					Movement();
 					Attack();
@@ -74,6 +74,7 @@ public class Fox_Move : MonoBehaviour {
 		}else if(rb.velocity.x>0){
 			sp.flipX=false;
 		}
+
 		//Movement Animation
 		if(rb.velocity.x!=0&&running==false){
 			anim.SetBool("Walking",true);
@@ -88,6 +89,9 @@ public class Fox_Move : MonoBehaviour {
 
 		if(rb.velocity.z!=0&&running==false){
 			anim.SetBool("Walking",true);
+		}
+		if(rb.velocity.z!=0&&running==true){
+			anim.SetBool("Running",true);
 		}
 	}
 
