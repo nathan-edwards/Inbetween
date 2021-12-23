@@ -32,12 +32,6 @@ public class Fox_Move : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		
-        if (Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5f)
-             {
-                 float vert = Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime;
-                 transform.Translate(new Vector3( 0f, 0f, vert));
-             }
-
 		if(dead==false){
 		//preventing character to change direction in Jump									
 			if(attacking==false){													
@@ -56,15 +50,22 @@ public class Fox_Move : MonoBehaviour {
 
 	void Movement(){
 		//Character Move
-		float move = Input.GetAxisRaw("Horizontal");
-		float vert = Input.GetAxisRaw("Vertical");
+		float move_x = Input.GetAxisRaw("Horizontal");
+		float move_z = Input.GetAxisRaw("Vertical");
+		// vertical = z
+		// horizontal = x
+		// up = y
+		//  if (Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5f){
+        //     rb.velocity = new Vector3(move_x, rb.velocity.y, move_z *speed*Time.deltaTime*3);
+        // }
+
 		if(Input.GetKey(KeyCode.Z)){
-			//Run
-			rb.velocity = new Vector3(move*speed*Time.deltaTime*3,rb.velocity.y, vert);
+			//Run (x2 faster than walking)
+			rb.velocity = new Vector3(move_x*speed*Time.deltaTime*2,rb.velocity.y, move_z *speed*Time.deltaTime*2);
 			running=true;
 		}else{
 			//Walk
-			rb.velocity = new Vector3(move*speed*Time.deltaTime,rb.velocity.y, vert);
+			rb.velocity = new Vector3(move_x*speed*Time.deltaTime,rb.velocity.y, move_z *speed*Time.deltaTime);
 			running=false;
 		}
 
