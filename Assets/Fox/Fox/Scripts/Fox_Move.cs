@@ -61,11 +61,11 @@ public class Fox_Move : MonoBehaviour {
 
 		if(Input.GetKey(KeyCode.Z)){
 			//Run (x2 faster than walking)
-			rb.velocity = new Vector3(move_x*speed*Time.deltaTime*2,rb.velocity.y, move_z *speed*Time.deltaTime*2);
+			rb.velocity = new Vector3(move_x*speed*Time.deltaTime*4,rb.velocity.y, move_z *speed*Time.deltaTime*4);
 			running=true;
 		}else{
 			//Walk
-			rb.velocity = new Vector3(move_x*speed*Time.deltaTime,rb.velocity.y, move_z *speed*Time.deltaTime);
+			rb.velocity = new Vector3(move_x*speed*Time.deltaTime*2,rb.velocity.y, move_z *speed*Time.deltaTime*2);
 			running=false;
 		}
 
@@ -99,19 +99,21 @@ public class Fox_Move : MonoBehaviour {
 	void Jump(){
 		//Jump
 		if(Input.GetKeyDown(KeyCode.Space)&&rb.velocity.y==0){
-			rb.AddForce(new Vector3(0,jumpForce,0));
+			rb.AddForce(new Vector3(0f,10f,0f));
 
 		}
 		//Jump Animation
-		if(rb.velocity.y>0&&up==false){
+
+		//NOT WORKING ATM
+		if(rb.velocity.y>0 && up==false){
 			up=true;
 			jumping=true;
 			anim.SetTrigger("Up");
-		}else if(rb.velocity.y<0&&down==false){
+		}else if(rb.velocity.y<0 && down==false){
 			down=true;
 			jumping=true;
 			anim.SetTrigger("Down");
-		}else if(rb.velocity.y==0&&(up==true||down==true)){
+		}else if(rb.velocity.y==0 && (up==true||down==true)){
 			up=false;
 			down=false;
 			jumping=false;
