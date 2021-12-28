@@ -41,8 +41,8 @@ public class Fox_Move : MonoBehaviour {
 		health = maxHealth;
         hunger = maxHunger;
 
-		healthBar = FindObjectOfType<HealthBar>();
-		hungerBar = FindObjectOfType<HungerBar>();
+		// healthBar = FindObjectOfType<HealthBar>();
+		// hungerBar = FindObjectOfType<HungerBar>();
 
         //change timing later
         InvokeRepeating("Starve", 5.0f, 0.5f);
@@ -99,6 +99,7 @@ public class Fox_Move : MonoBehaviour {
 		}
 		if(rb.velocity.x!=0&&running==true){
 			anim.SetBool("Running",true);
+			
 		}else{
 			anim.SetBool("Running",false);
 		}
@@ -138,7 +139,7 @@ public class Fox_Move : MonoBehaviour {
 
 	void Attack(){																//I activated the attack animation and when the 
 		//Atacking																//animation finish the event calls the AttackEnd()
-		if(Input.GetKeyDown(KeyCode.X)){
+		if(Input.GetKeyDown(KeyCode.Space)){
 			rb.velocity=new Vector3(0,0,0);
 			anim.SetTrigger("Attack");
 			attacking=true;
@@ -200,7 +201,7 @@ public class Fox_Move : MonoBehaviour {
 		if(isAlive){
 			UpdateHunger(-0.1f);
 			//update hunger bar UI
-			hungerBar.updateHungerBar(hunger);
+			// hungerBar.updateHungerBar(hunger);
 		}
     }
 
@@ -208,7 +209,7 @@ public class Fox_Move : MonoBehaviour {
         //make sure hunger doesn't go above max or below min
         hunger = Mathf.Clamp(hunger + d, 0, maxHunger);
 		//update hunger bar
-		hungerBar.updateHungerBar(hunger);
+		// hungerBar.updateHungerBar(hunger);
     }
 
 	void depleteHealth(){
