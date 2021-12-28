@@ -12,6 +12,9 @@ public class ControlsMovement : MonoBehaviour
     public Transform player;
     public Follower E;
     public Animator animator;
+    public HealthBar healthBar;
+	public HungerBar hungerBar;
+
 
     //jieying was here: adding health & hunger & their respective UI elements
     private int health;
@@ -19,9 +22,7 @@ public class ControlsMovement : MonoBehaviour
     private float hunger;
     public float maxHunger = 100;
 
-	public HealthBar healthBar;
-	public HungerBar hungerBar;
-
+	
 	//jieying was here: variables for timer & wait time respectively
 	//feel free to change wait time (t2)
 	float t1 = 0.0f;
@@ -56,19 +57,12 @@ public class ControlsMovement : MonoBehaviour
         
     }
 
-    public void OnMouseDown(){
-            // this object was clicked - do something
-            // if (this.gameObject.name == "Enemy1"){
-            //     Destroy(this.gameObject);
-            //     E.updateHealthE();
-            //     print("touched enemy1");
-            // }else{
-            //     print("something else");
-            // }
-        Destroy (this.gameObject);
-        print("niceeee");
+    // public void OnMouseDown(){
+         
+    //     Destroy (this.gameObject);
+    //     print("niceeee");
         
-    }
+    // }
 
     void checkIfFalling(){
         if(rb.position.y < 0){
@@ -78,7 +72,7 @@ public class ControlsMovement : MonoBehaviour
             UpdateHunger(-100.0f);
             Destroy(this.gameObject);
             // FindObjectOfType<GameOver>().displayGameOver();
-            StartCoroutine(waiter());
+            // StartCoroutine(waiter());
             Application.LoadLevel("Biome 1");
         }
     }
@@ -87,11 +81,11 @@ public class ControlsMovement : MonoBehaviour
         rb.MovePosition(rb.position + move * moveSpeed * Time.fixedDeltaTime);
     }
 
-    IEnumerator waiter()
-    {
-        //Wait for 4 seconds
-        yield return new WaitForSeconds(10);
-    }
+    // IEnumerator waiter()
+    // {
+    //     //Wait for 4 seconds
+    //     yield return new WaitForSeconds(10);
+    // }
 
     //jieying was here: adding update health function
     public void UpdateHealth(int d){
