@@ -230,6 +230,6 @@ public class Fox_Move : MonoBehaviour {
     }
 
 	public void TryAgain(){														//Just to Call the level again
-		SceneManager.LoadScene("Fox_Demo");
+		SceneManager.LoadScene("enemy-player attack");
 	}
 }
