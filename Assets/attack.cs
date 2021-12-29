@@ -26,9 +26,9 @@ public class attack : MonoBehaviour
     public void Attack(){
         anim.SetTrigger("Attack");
     // for 3d enemies
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
 
-        foreach(Collider2D enemy in hitEnemies){
+        foreach(Collider enemy in hitEnemies){
             Debug.Log("We hit " + enemy.name);
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
             
