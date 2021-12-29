@@ -20,25 +20,20 @@ public class attack : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)){
-            if(rb.velocity.x<0){
-			sp.flipX=true;
-		}else if(rb.velocity.x>0){
-			sp.flipX=false;
-		}
-            Attack();
-        }
+        
     }
 
-    void Attack(){
+    public void Attack(){
         anim.SetTrigger("Attack");
     // for 3d enemies
-        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-        foreach(Collider enemy in hitEnemies){
-            Debug.Log("We hit" + enemy.name);
+        foreach(Collider2D enemy in hitEnemies){
+            Debug.Log("We hit " + enemy.name);
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            
         }
+        // anim.SetBool("Walking", true);
     }
 
     
