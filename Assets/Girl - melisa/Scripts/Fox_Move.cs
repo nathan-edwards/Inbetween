@@ -5,7 +5,7 @@ using System.Collections;
 public class Fox_Move : MonoBehaviour {
 
     public float speed,jumpForce;
-	public bool running,up,down,jumping,crouching,dead,attacking,special,walking, swordOn;
+	public bool running,up,down,jumping,crouching,attacking,special,walking, swordOn;
     private Rigidbody rb;
     private Animator anim;
 	private SpriteRenderer sp;
@@ -39,7 +39,7 @@ public class Fox_Move : MonoBehaviour {
 		crouching=false;
 		swordOn=false;
 		walking=false;
-		health = maxHealth;
+		health = 100;
         hunger = maxHunger;
 
 		// healthBar = FindObjectOfType<HealthBar>();
@@ -55,12 +55,14 @@ public class Fox_Move : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(dead==false){								
+		if(isAlive==true){								
 			if(attacking==false){													
 					Movement();
 					Attack();
 			}
+		}else {
 			Dead();
+			anim.SetBool("Walking", false);
 		}
 	}
 
@@ -83,13 +85,17 @@ public class Fox_Move : MonoBehaviour {
 				rb.velocity = new Vector3(move_x*speed*Time.deltaTime*4,rb.velocity.y, move_z *speed*Time.deltaTime*4);
 				running=true;
 				walking=false;
+				// down=true;
 			}else{
 				//Walk
 				rb.velocity = new Vector3(move_x*speed*Time.deltaTime*2,rb.velocity.y, move_z *speed*Time.deltaTime*2);
 				running=false;
 				walking=true;
+				// down=true;
 			}
 		}
+		//chekc if falling
+		Fall();
 		//Movement Animation
 		moveAnim();
 		//flip vertically
@@ -98,27 +104,30 @@ public class Fox_Move : MonoBehaviour {
 
 
 	void moveAnim(){
-		if(rb.velocity.x!=0 && walking==true){
-			anim.SetBool("Walking",true);
-		}else{
-			anim.SetBool("Walking",false);
-			walking=false;
-		}
-		if(rb.velocity.x!=0&&running==true){
-			anim.SetBool("Running",true);
-			
-		}else{
-			anim.SetBool("Running",false);
-		}
+			// down=true;
+			if(rb.velocity.x!=0 && walking==true){
+				anim.SetBool("Walking",true);
+				
+			}else{
+				anim.SetBool("Walking",false);
+				walking=false;
+			}
+			if(rb.velocity.x!=0&&running==true){
+				anim.SetBool("Running",true);
+				
+			}else{
+				anim.SetBool("Running",false);
+			}
 
-		if(rb.velocity.z!=0&&running==false){
-			anim.SetBool("Walking",true);
-			walking=true;
-		}
-		if(rb.velocity.z!=0&&running==true){
-			anim.SetBool("Running",true);
-			running=true;
-		}
+			if(rb.velocity.z!=0&&running==false){
+				anim.SetBool("Walking",true);
+				walking=true;
+			}
+			if(rb.velocity.z!=0&&running==true){
+				anim.SetBool("Running",true);
+				running=true;
+			}
+	
 	}
 
 	void Turn(){
@@ -129,12 +138,6 @@ public class Fox_Move : MonoBehaviour {
 		}
 	}
 	void Attack(){																//I activated the attack animation and when the 
-		//Atacking																//animation finish the event calls the AttackEnd()
-		// if(Input.GetKeyDown(KeyCode.Space)){
-		// 	rb.velocity=new Vector3(0,0,0);
-		// 	anim.SetTrigger("Attack");
-		// 	attacking=true;
-		// }
 		if (Input.GetKeyDown(KeyCode.Space)){
 			if(rb.velocity.x<0){
 				sp.flipX=true;
@@ -145,7 +148,24 @@ public class Fox_Move : MonoBehaviour {
 			// walking=true;
         }
 	}
+	void Fall(){
 
+		//  if(rb.velocity.y>0 && up==false){
+        //     up=true;
+		// }else if(rb.velocity.y<0 && down==false){
+        //     down=true;
+		// 	up=true;
+        //     anim.SetTrigger("Down");
+		// 	print("down is "+ down);
+
+        // }else if(rb.velocity.y==0 && (up==true||down==true)){
+        //     up=false;
+        //     down=false;
+        //     anim.SetTrigger("Ground");
+		// 	print("down is "+ down);
+        // }
+	}
+	
 	void AttackEnd(){
 		attacking=false;
 	}					
@@ -166,22 +186,29 @@ public class Fox_Move : MonoBehaviour {
 
 	void Dead(){
 		// dying animation
+		Debug.Log("YOU DIED");
+		anim.SetTrigger("Dead");
+		// FindObjectOfType<GameOver>().displayGameOver();
+		
 	}
 
 	//jieying was here: adding update health function
     public void UpdateHealth(int d){
         //make sure health doesn't go above max or below min
-        health = Mathf.Clamp(health + d, 0, maxHealth);
-		//update health bar
-		// healthBar.updateHealthBar(health);
-		print(health+ " health right now");
+		if (isAlive == true){
+			health = Mathf.Clamp(health + d, 0, maxHealth);
+			//update health bar
+			// healthBar.updateHealthBar(health);
+			print("Player health is "+ health+ " right now");
+			checkAliveStatus();
+		}
     }
 
 	void Starve(){
 		if(isAlive){
 			UpdateHunger(-0.1f);
 			//update hunger bar UI
-			// hungerBar.updateHungerBar(hunger);
+			// hungerBar.updatewHungerBar(hunger);
 		}
     }
 
@@ -211,23 +238,9 @@ public class Fox_Move : MonoBehaviour {
 	void checkAliveStatus(){
 		//if player dies then end game and do the end game related things like show game over screen
 		if(health <= 0){
-			isAlive = false;
-			FindObjectOfType<GameOver>().displayGameOver();
-			Debug.Log("Player dead");
+			isAlive = false;	
 		}
 	}
-
-	  void checkIfFalling(){
-        if(rb.position.y < 0){
-            print(rb.position.y);
-            UpdateHunger(-100f);
-            UpdateHealth(-100);
-            UpdateHunger(-100.0f);
-            Destroy(this.gameObject);
-            // FindObjectOfType<GameOver>().displayGameOver();
-            TryAgain();
-        }
-    }
 
 	public void TryAgain(){														//Just to Call the level again
 		SceneManager.LoadScene("enemy-player attack");
