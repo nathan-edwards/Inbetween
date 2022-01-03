@@ -15,12 +15,14 @@ public class Fox_Move : MonoBehaviour {
 	public HungerBar hungerBar;
 	private bool isAlive;
 
+	public Transform Enemy;
+
 	//character's needs
     private int health;
     public int maxHealth = 100;
     private float hunger;
     public float maxHunger = 100;
-	public float moveSpeed = 5f;
+	public float moveSpeed = 3f;
 
 	//jieying was here: variables for timer & wait time respectively
 	//feel free to change wait time (t2)
@@ -181,6 +183,7 @@ public class Fox_Move : MonoBehaviour {
 	void Hurt(){
 		// decrease health here
 		anim.SetTrigger("Damage");
+		// transform.LookAt(Enemy);
 		UpdateHealth(-10);
 	}
 
@@ -241,6 +244,10 @@ public class Fox_Move : MonoBehaviour {
 			isAlive = false;	
 		}
 	}
+
+	// face the enemy when taking damage
+	// ,........
+	
 
 	public void TryAgain(){														//Just to Call the level again
 		SceneManager.LoadScene("enemy-player attack");
