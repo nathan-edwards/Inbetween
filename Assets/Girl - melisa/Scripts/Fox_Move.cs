@@ -69,6 +69,8 @@ public class Fox_Move : MonoBehaviour {
 	}
 
 	public void Movement(){
+		anim.SetBool("Walking",false);
+
 		//Character Move
 		float move_x = Input.GetAxisRaw("Horizontal");
 		float move_z = Input.GetAxisRaw("Vertical");
@@ -87,6 +89,7 @@ public class Fox_Move : MonoBehaviour {
 				rb.velocity = new Vector3(move_x*speed*Time.deltaTime*4,rb.velocity.y, move_z *speed*Time.deltaTime*4);
 				running=true;
 				walking=false;
+				anim.SetBool("Walking",false);
 				// down=true;
 			}else{
 				//Walk
@@ -107,6 +110,7 @@ public class Fox_Move : MonoBehaviour {
 
 	void moveAnim(){
 			// down=true;
+			
 			if(rb.velocity.x!=0 && walking==true){
 				anim.SetBool("Walking",true);
 				
@@ -133,6 +137,7 @@ public class Fox_Move : MonoBehaviour {
 	}
 
 	void Turn(){
+		// anim.SetBool("Walking",false);
 		if(rb.velocity.x<0){
 			sp.flipX=true;
 		}else if(rb.velocity.x>0){
@@ -179,12 +184,17 @@ public class Fox_Move : MonoBehaviour {
 			Hurt();
 		}
 	}
-
+	public float m_Thrust = 20f;
 	void Hurt(){
 		// decrease health here
 		anim.SetTrigger("Damage");
+		rb.velocity *= -100;
 		// transform.LookAt(Enemy);
+		anim.SetBool("Walking",false);
 		UpdateHealth(-10);
+		//jump back when hurt
+		rb.AddForce(player.up * m_Thrust);
+		
 	}
 
 	void Dead(){

@@ -55,6 +55,7 @@ using System.Collections;
         if (distsqr <attackRange){
             print("I am in attack range "+ distsqr);
             // attack animation
+            anim.SetTrigger("attack");
         }
     }
 
