@@ -33,7 +33,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.75
   contrast:
     m_OverrideState: 1
     m_Value: 5
@@ -52,7 +52,7 @@ MonoBehaviour:
     max: 180
   saturation:
     m_OverrideState: 1
-    m_Value: -5
+    m_Value: -12.5
     min: -100
     max: 100
 --- !u!114 &-3431084404610437025
@@ -75,18 +75,18 @@ MonoBehaviour:
     min: -200
     max: 200
   redOutGreenIn:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 5
     min: -200
     max: 200
   redOutBlueIn:
     m_OverrideState: 1
-    m_Value: -10
+    m_Value: 0
     min: -200
     max: 200
   greenOutRedIn:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 27
     min: -200
     max: 200
   greenOutGreenIn:
@@ -96,12 +96,12 @@ MonoBehaviour:
     max: 200
   greenOutBlueIn:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 21
     min: -200
     max: 200
   blueOutRedIn:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 15
     min: -200
     max: 200
   blueOutGreenIn:
@@ -158,7 +158,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.15
+    m_Value: 0.2
     min: 0
     max: 1
   smoothness:
@@ -189,7 +189,7 @@ MonoBehaviour:
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 18
     min: 0
   scatter:
     m_OverrideState: 0
@@ -237,14 +237,14 @@ MonoBehaviour:
   m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
   gaussianStart:
     m_OverrideState: 1
-    m_Value: 60
+    m_Value: 45
     min: 0
   gaussianEnd:
     m_OverrideState: 1
-    m_Value: 100
+    m_Value: 120
     min: 0
   gaussianMaxRadius:
     m_OverrideState: 0
@@ -255,31 +255,31 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   focusDistance:
-    m_OverrideState: 0
-    m_Value: 10
+    m_OverrideState: 1
+    m_Value: 11.24
     min: 0.1
   aperture:
-    m_OverrideState: 0
-    m_Value: 5.6
+    m_OverrideState: 1
+    m_Value: 5.5
     min: 1
     max: 32
   focalLength:
-    m_OverrideState: 0
-    m_Value: 50
+    m_OverrideState: 1
+    m_Value: 122
     min: 1
     max: 300
   bladeCount:
-    m_OverrideState: 0
-    m_Value: 5
+    m_OverrideState: 1
+    m_Value: 6
     min: 3
     max: 9
   bladeCurvature:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
     min: 0
     max: 1
   bladeRotation:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
     min: -180
     max: 180
