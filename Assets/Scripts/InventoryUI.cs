@@ -30,7 +30,8 @@ public class InventoryUI : MonoBehaviour
 
 			//hide item sprite
 			inventorySlotsParentContainer.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
-			//hide item quantity
+			//reset item quantity number & hide item quantity
+			inventorySlotsParentContainer.GetChild(i).GetChild(1).GetComponent<Text>().text = "0";
 			inventorySlotsParentContainer.GetChild(i).GetChild(1).GetComponent<Text>().enabled = false;
 			//make the item slot not clickable
 			inventorySlotsParentContainer.GetChild(i).GetComponent<Button>().interactable = false;
@@ -44,7 +45,8 @@ public class InventoryUI : MonoBehaviour
 
 			//make the sprite visible
 			inventorySlotsParentContainer.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
-			//make item quantity visible
+			//set item quantity & make item quantity visible
+			inventorySlotsParentContainer.GetChild(i).GetChild(1).GetComponent<Text>().text = Inventory.inventory.itemQuantity[i].ToString();
 			inventorySlotsParentContainer.GetChild(i).GetChild(1).GetComponent<Text>().enabled = true;
 			//make the item slot interactable/clickable
 			inventorySlotsParentContainer.GetChild(i).GetComponent<Button>().interactable = true;

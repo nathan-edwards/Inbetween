@@ -13,6 +13,8 @@ public class UseItem : MonoBehaviour
 	}
 
 	public void UseTheItem(){
+		//make item do different things depending on item type
+		//then remove item/reduce quantity of item
 		if(Equals(item.itemType, "health")){
 			Debug.Log("h");
 			Inventory.inventory.RemoveItem(item);
@@ -20,6 +22,7 @@ public class UseItem : MonoBehaviour
 			Debug.Log("f");
 			Inventory.inventory.RemoveItem(item);
 		}
+
 		btn.parent.GetComponent<ItemProfile>().HideItemDetails();
 	}
 }
