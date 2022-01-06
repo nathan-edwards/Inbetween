@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Item : ScriptableObject {
     public string itemName;
 	public string itemDesc;
+	public string itemType;
 	public int itemStat;
 	public Sprite itemImg;
 }
