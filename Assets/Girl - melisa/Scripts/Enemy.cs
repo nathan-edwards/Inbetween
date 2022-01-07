@@ -16,8 +16,10 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
+
+    
     public void TakeDamage(int damage){
         // animation for hurt
         Debug.Log("Enemy health is"+ currHealth);

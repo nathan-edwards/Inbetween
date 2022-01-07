@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5530429, g: 0.8516213, b: 0.9293935, a: 1}
+  m_IndirectSpecularColor: {r: 0.55255383, g: 0.8514655, b: 0.92926854, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9178,10 +9178,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 669385654}
     m_Modifications:
+    - target: {fileID: 7902435890007214325, guid: dc9a80206db6248be903ddd184c35fb9, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7902435890007214326, guid: dc9a80206db6248be903ddd184c35fb9, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1967866661}
+    - target: {fileID: 7902435890007214326, guid: dc9a80206db6248be903ddd184c35fb9, type: 3}
+      propertyPath: attackRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902435890007214326, guid: dc9a80206db6248be903ddd184c35fb9, type: 3}
+      propertyPath: detectRange
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7902435890007214329, guid: dc9a80206db6248be903ddd184c35fb9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -22829,6 +22841,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7147988019433712075, guid: eeaf6578d9e153748a7d1584cc23ee6f, type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7147988019433712112, guid: eeaf6578d9e153748a7d1584cc23ee6f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -25339,6 +25355,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 669385654}
     m_Modifications:
+    - target: {fileID: 7902435890007214325, guid: dc9a80206db6248be903ddd184c35fb9, type: 3}
+      propertyPath: m_Drag
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902435890007214325, guid: dc9a80206db6248be903ddd184c35fb9, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7902435890007214326, guid: dc9a80206db6248be903ddd184c35fb9, type: 3}
       propertyPath: player
       value: 

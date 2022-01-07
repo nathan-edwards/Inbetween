@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Fox_Move : MonoBehaviour {
 
-    public float speed,jumpForce;
+    public float dieCount,speed,jumpForce;
 	public bool running,up,down,jumping,crouching,attacking,special,walking, swordOn;
     private Rigidbody rb;
     private Animator anim;
@@ -43,6 +43,7 @@ public class Fox_Move : MonoBehaviour {
 		walking=false;
 		health = 100;
         hunger = maxHunger;
+		dieCount=0;
 
 		// healthBar = FindObjectOfType<HealthBar>();
 		// hungerBar = FindObjectOfType<HungerBar>();
@@ -64,12 +65,11 @@ public class Fox_Move : MonoBehaviour {
 			}
 		}else {
 			Dead();
-			anim.SetBool("Walking", false);
 		}
 	}
 
 	public void Movement(){
-		anim.SetBool("Walking",false);
+
 
 		//Character Move
 		float move_x = Input.GetAxisRaw("Horizontal");
@@ -84,12 +84,16 @@ public class Fox_Move : MonoBehaviour {
 			Input.GetKey(KeyCode.DownArrow) ||
 			Input.GetKey(KeyCode.W) ){
 
+			if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)  ){
+				//flip vertically
+				Turn();
+			}
+
 			if(Input.GetKey(KeyCode.Z)){
 				//Run (x2 faster than walking)
 				rb.velocity = new Vector3(move_x*speed*Time.deltaTime*4,rb.velocity.y, move_z *speed*Time.deltaTime*4);
 				running=true;
 				walking=false;
-				anim.SetBool("Walking",false);
 				// down=true;
 			}else{
 				//Walk
@@ -103,8 +107,7 @@ public class Fox_Move : MonoBehaviour {
 		Fall();
 		//Movement Animation
 		moveAnim();
-		//flip vertically
-		Turn();
+		
 	}
 
 
@@ -144,6 +147,7 @@ public class Fox_Move : MonoBehaviour {
 			sp.flipX=false;
 		}
 	}
+
 	void Attack(){																//I activated the attack animation and when the 
 		if (Input.GetKeyDown(KeyCode.Space)){
 			if(rb.velocity.x<0){
@@ -199,10 +203,12 @@ public class Fox_Move : MonoBehaviour {
 
 	void Dead(){
 		// dying animation
-		Debug.Log("YOU DIED");
-		anim.SetTrigger("Dead");
-		// FindObjectOfType<GameOver>().displayGameOver();
-		
+		if (dieCount!=0){
+			dieCount+=1;
+			Debug.Log("YOU DIED");
+			anim.SetTrigger("Dead");
+		// display game over
+		}
 	}
 
 	//jieying was here: adding update health function

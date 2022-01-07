@@ -11,9 +11,10 @@ using System.Collections;
     public bool inRange = false;
     public float moveSpeed = 5f; // enemy speed
     Rigidbody rb;  
-    public float attackRange= 3; // when to attack
+    public float attackRange= 5; // when to attack
     public bool walking;
     float distsqr;
+    private SpriteRenderer sp;
 
     void Awake()
     {
@@ -24,6 +25,7 @@ using System.Collections;
     void Start(){
         anim = GetComponent<Animator>();
         anim.SetBool("Walking", false);
+        sp=GetComponent<SpriteRenderer>();
         walking=false;
     }
     void Update()
@@ -33,12 +35,21 @@ using System.Collections;
         //if (walking == false){
         whatever();
         //}
-       
-    
     }
+
+    void Turn(){
+		// anim.SetBool("Walking",false);
+		if(rb.velocity.x<0){
+			sp.flipX=true;
+		}else if(rb.velocity.x>0){
+			sp.flipX=false;
+		}
+	}
+
     void whatever(){
         if (distsqr <= detectRange)
-        {
+        {   
+            Turn();
             // print("I am in range "+ distsqr);
             // if in range walk towards
             anim.SetBool("Walking", true);
@@ -53,7 +64,6 @@ using System.Collections;
             walking=false;
         }
         if (distsqr <attackRange){
-            print("I am in attack range "+ distsqr);
             // attack animation
             anim.SetTrigger("attack");
         }
