@@ -71,4 +71,19 @@ public class Inventory : MonoBehaviour
 			itemQuantity.RemoveAt(index);
 		}
 	}
+
+	//method to check for item quantity given a particular item
+	public int SearchListForItemQuantity(Item x){
+		int quantity = 0;
+
+		//makes use of parallel lists
+		for(int i = 0; i < itemList.Count; i++){
+			if(Equals(x.itemName, itemList[i].itemName)){
+				quantity = itemQuantity[i];
+				break;
+			}
+		}
+
+		return quantity;
+	}
 }

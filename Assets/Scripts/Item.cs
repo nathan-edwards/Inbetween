@@ -11,4 +11,9 @@ public class Item : ScriptableObject {
 	public string itemType;
 	public int itemStat;
 	public Sprite itemImg;
+
+	//virtual method for using item
+	public virtual void Use(){
+		Debug.Log("Item of type " + itemType + " used.");
+	}
 }

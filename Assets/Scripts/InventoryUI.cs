@@ -6,10 +6,6 @@ using UnityEngine.UI;
 //jieying was here: to make the inventory UI do things
 public class InventoryUI : MonoBehaviour
 {
-	/*
-		to do:
-		- stackable items
-	*/
 	public Transform inventorySlotsParentContainer;
 	//boolean to track if inventory screen/menu is open or not
 	private bool isDisplayed = false;
