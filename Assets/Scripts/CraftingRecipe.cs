@@ -4,7 +4,7 @@ using UnityEngine;
 
 // jieying was here: scriptable object for crafting recipes
 //inherits from Item class
-[CreateAssetMenu(fileName = "crafting recipe", menuName = "jay-is-trying/crafting recipes")]
+[CreateAssetMenu(fileName = "crafting recipe", menuName = "jay-is-items/crafting recipes")]
 public class CraftingRecipe : Item
 {
 	//parallel arrays

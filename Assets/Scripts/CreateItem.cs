@@ -13,9 +13,9 @@ public class CreateItem : MonoBehaviour
 	}
 
 	//when button gets clicked, create the item
+	//redraw recipe details to update available item quantities
 	public void CraftItem(){
 		recipe.CreateItem();
-
-		// btn.parent.GetComponent<CraftItemResultProfile>().HideItemDetails();
+		btn.parent.GetComponent<CraftItemResultProfile>().DisplayRecipeDetails();
 	}
 }

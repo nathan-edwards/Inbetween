@@ -27,6 +27,8 @@ public class CraftingMenuUI : MonoBehaviour
 			//hide
 			craftingSlotsContainer.parent.gameObject.SetActive(false);
 			isDisplayed = false;
+
+			craftingSlotsContainer.parent.GetChild(2).GetComponent<CraftItemResultProfile>().HideRecipeDetails();
 		}
 	}
 

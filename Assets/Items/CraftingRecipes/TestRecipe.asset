@@ -14,11 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: test recipe
   itemDesc: not a recipe for chicken nuggets :/
-  itemType: recipe
-  itemStat: 0
   itemImg: {fileID: 21300000, guid: abfc32f2c520a9a49b43f68a47c83fe9, type: 3}
   materials:
-  - {fileID: 11400000, guid: 26b64a81860cd8946b010fe9bda1a386, type: 2}
-  - {fileID: 11400000, guid: 9b2e25fd985866f43a4287c2fa031a86, type: 2}
+  - {fileID: 11400000, guid: dab449bf885dee0499d57a421f497d94, type: 2}
+  - {fileID: 11400000, guid: 1a51de87a9455ba42a11aed313873464, type: 2}
   quantities: 0100000002000000
   result: {fileID: 11400000, guid: d364d965a02264740af370b8cdeb047a, type: 2}

@@ -15,22 +15,19 @@ public class UseItem : MonoBehaviour
 
 	//use item, then remove item from inventory, hide the side profile that was opened on the item that got used
 	public void UseTheItem(){
-		//make item do different things depending on item type
-		//then remove item/reduce quantity of item
-		// if(Equals(item.itemType, "health")){
-		// 	item.Use();
-		// 	Inventory.inventory.RemoveItem(item);
-		// } else if(Equals(item.itemType, "food")){
-			
-		// 	Debug.Log("f");
-		// 	Inventory.inventory.RemoveItem(item);
-		// } else if(Equals(item.itemType, "recipe")){
-		// 	Inventory.inventory.RemoveItem(item);
-		// }
-
 		item.Use();
+		if(item is SwordItem){
+			Debug.Log("wow");
+		}
 		Inventory.inventory.RemoveItem(item);
 
-		btn.parent.GetComponent<ItemProfile>().HideItemDetails();
+		//checks inventory quantity of used item to see if to display item profile or not
+		//better UX (in my opinion)
+		//lets use click on the available item multiple times if its available without reselecting the item
+		if(Inventory.inventory.SearchListForItemQuantity(item) > 0){
+			btn.parent.GetComponent<ItemProfile>().DisplayItemDetails();
+		} else {
+			btn.parent.GetComponent<ItemProfile>().HideItemDetails();
+		}
 	}
 }

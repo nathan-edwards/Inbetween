@@ -80,10 +80,25 @@ public class CraftItemResultProfile : MonoBehaviour
 		//and set sprite to no sprite
 		profile.GetChild(2).GetComponent<SpriteRenderer>().enabled = false;
 		profile.GetChild(2).GetComponent<SpriteRenderer>().sprite = null;
+
+		//loop to hide each of the required materials
+		for(int i = 0; i < profile.GetChild(3).childCount; i++){
+			//sprite
+			profile.GetChild(3).GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+			profile.GetChild(3).GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+
+			//item name
+			profile.GetChild(3).GetChild(i).GetChild(1).GetComponent<Text>().text = "";
+			profile.GetChild(3).GetChild(i).GetChild(1).GetComponent<Text>().enabled = false;
+
+			//item materials
+			profile.GetChild(3).GetChild(i).GetChild(2).GetComponent<Text>().text = "";
+			profile.GetChild(3).GetChild(i).GetChild(2).GetComponent<Text>().enabled = false;
+		}
 		
-		//make the use item button not clickable/interactable
-		profile.GetChild(3).GetChild(0).GetComponent<Text>().color = new Color(0.7843137f, 0.7843137f, 0.7843137f, 0.5f);
-		profile.GetChild(3).GetComponent<Button>().interactable = false;
+		//make the craft item button not clickable/interactable
+		profile.GetChild(4).GetChild(0).GetComponent<Text>().color = new Color(0.7843137f, 0.7843137f, 0.7843137f, 0.5f);
+		profile.GetChild(4).GetComponent<Button>().interactable = false;
 	}
 
 	//method to check if player has enough materials to craft item
