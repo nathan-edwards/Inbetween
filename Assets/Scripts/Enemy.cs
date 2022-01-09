@@ -13,11 +13,6 @@ public class Enemy : MonoBehaviour
         currHealth= maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
  
     public void TakeDamage(int damage){
         // animation for hurt

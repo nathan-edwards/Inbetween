@@ -50,8 +50,6 @@ using System.Collections;
         Turn();
         if (distsqr <= detectRange)
         {   
-            
-            // print("I am in range "+ distsqr);
             // if in range walk towards
             anim.SetBool("Walking", true);
             walking=true;

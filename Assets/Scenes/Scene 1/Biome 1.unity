@@ -23558,6 +23558,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7147988019433712075, guid: eeaf6578d9e153748a7d1584cc23ee6f, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147988019433712075, guid: eeaf6578d9e153748a7d1584cc23ee6f, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}

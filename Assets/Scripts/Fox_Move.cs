@@ -49,8 +49,6 @@ public class Fox_Move : MonoBehaviour {
         //change timing later
         InvokeRepeating("Starve", 5.0f, 0.5f);
 		isAlive = true;
-		anim.SetBool("Walking",false);
-
 	}
 	void Update(){
 		
@@ -66,15 +64,9 @@ public class Fox_Move : MonoBehaviour {
 			Dead();
 		}
 	}
-	
-	public void alive(){
-
-	}
 
 	public void Movement(){
-
-
-		//Character Move
+	//Character Move
 		float move_x = Input.GetAxisRaw("Horizontal");
 		float move_z = Input.GetAxisRaw("Vertical");
 		
@@ -120,30 +112,27 @@ public class Fox_Move : MonoBehaviour {
 			if(rb.velocity.x!=0 && walking==true){
 				anim.SetBool("Walking",true);
 				
-			}else{
+			}else if(rb.velocity.z!=0 && walking==true){
+				anim.SetBool("Walking",true);
+				
+			}else {
 				anim.SetBool("Walking",false);
-				walking=false;
 			}
+
 			if(rb.velocity.x!=0&&running==true){
 				anim.SetBool("Running",true);
 				
+			}else if(rb.velocity.z!=0&&running==true){
+				anim.SetBool("Running",true);
 			}else{
 				anim.SetBool("Running",false);
 			}
 
-			if(rb.velocity.z!=0&&running==false){
-				anim.SetBool("Walking",true);
-				walking=true;
-			}
-			if(rb.velocity.z!=0&&running==true){
-				anim.SetBool("Running",true);
-				running=true;
-			}
+			
 	
 	}
 
 	void Turn(){
-		// anim.SetBool("Walking",false);
 		if(rb.velocity.x<0){
 			sp.flipX=true;
 		}else if(rb.velocity.x>0){
@@ -159,7 +148,7 @@ public class Fox_Move : MonoBehaviour {
 				sp.flipX=false;
 			}
 			rb.GetComponent<attack>().Attack();
-			// walking=true;
+		
         }
 	}
 	void Fall(){
@@ -192,10 +181,9 @@ public class Fox_Move : MonoBehaviour {
 			float force = 3;
 			Vector3 dir = other.contacts[0].point - transform.position;
 			// We then get the opposite (-Vector3) and normalize it
-			dir = -dir.normalized;
-			// And finally we add force in the direction of dir and multiply it by force. 
-			// This will push back the player
-			rb.AddForce(dir*force);
+			float bounce = 6f; //amount of force to apply
+			print("eyyyy");
+       		rb.AddForce(Vector3.up * 300);
 		}
 		
 	}
@@ -207,11 +195,8 @@ public class Fox_Move : MonoBehaviour {
 		anim.SetTrigger("Damage");
 		// rb.velocity *= -100;
 		// transform.LookAt(other.gameObject.tag("Enemy"));
-		anim.SetBool("Walking",false);
 		UpdateHealth(-10);
 		//jump back when hurt
-		// rb.AddForce(player.up * m_Thrust);
-		
 	}
 
 	void Dead(){

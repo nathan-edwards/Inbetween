@@ -16,7 +16,6 @@ public class gameover : MonoBehaviour
     void Update(){
         alive=FindObjectOfType<Fox_Move>();
         a = alive.isAlive;
-        print(a);
         GameIsOver();
     }
     
@@ -34,7 +33,7 @@ public class gameover : MonoBehaviour
     }
 
     public void TryAgain(){	
-         GameOverUI.SetActive(false);													//Just to Call the level again
+        GameOverUI.SetActive(false);													//Just to Call the level again
 		SceneManager.LoadScene(1);
 	}
 }
