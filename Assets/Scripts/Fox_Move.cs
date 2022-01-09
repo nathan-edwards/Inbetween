@@ -39,7 +39,7 @@ public class Fox_Move : MonoBehaviour {
 		crouching=false;
 		swordOn=false;
 		walking=false;
-		health = 10;
+		health = 100;
         hunger = maxHunger;
 		dieCount=0;
 
@@ -205,8 +205,8 @@ public class Fox_Move : MonoBehaviour {
 	void Hurt(){
 		// decrease health here
 		anim.SetTrigger("Damage");
-		rb.velocity *= -100;
-		// transform.LookAt(Enemy);
+		// rb.velocity *= -100;
+		// transform.LookAt(other.gameObject.tag("Enemy"));
 		anim.SetBool("Walking",false);
 		UpdateHealth(-10);
 		//jump back when hurt

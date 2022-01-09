@@ -18,12 +18,9 @@ public class Enemy : MonoBehaviour
     {
        
     }
-
-    
+ 
     public void TakeDamage(int damage){
         // animation for hurt
-        Debug.Log("Enemy health is"+ currHealth);
-
         if(currHealth <=0){
             Die();
         }
@@ -39,7 +36,6 @@ public class Enemy : MonoBehaviour
         anim.SetBool("die",true);
         anim.SetTrigger("die");
         //disable enemy after death
-        Debug.Log("Enemy is dead");
         Destroy(gameObject);
     }
 }
