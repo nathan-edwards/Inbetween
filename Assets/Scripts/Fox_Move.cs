@@ -10,11 +10,10 @@ public class Fox_Move : MonoBehaviour {
     private Animator anim;
 	private SpriteRenderer sp;
 	public Transform player;
+	public Transform Enemy;
 	public HealthBar healthBar;
 	public HungerBar hungerBar;
-	private bool isAlive;
-
-	public Transform Enemy;
+	public bool isAlive;
 
 	//character's needs
     private int health;
@@ -40,7 +39,7 @@ public class Fox_Move : MonoBehaviour {
 		crouching=false;
 		swordOn=false;
 		walking=false;
-		health = 100;
+		health = 10;
         hunger = maxHunger;
 		dieCount=0;
 
@@ -50,6 +49,7 @@ public class Fox_Move : MonoBehaviour {
         //change timing later
         InvokeRepeating("Starve", 5.0f, 0.5f);
 		isAlive = true;
+		anim.SetBool("Walking",false);
 
 	}
 	void Update(){
@@ -65,6 +65,10 @@ public class Fox_Move : MonoBehaviour {
 		}else {
 			Dead();
 		}
+	}
+	
+	public void alive(){
+
 	}
 
 	public void Movement(){
@@ -212,10 +216,11 @@ public class Fox_Move : MonoBehaviour {
 
 	void Dead(){
 		// dying animation
+		// isAlive=false;
 		if (dieCount==0){
 			dieCount+=1;
-			Debug.Log("YOU DIED");
 			anim.SetTrigger("Dead");
+
 		// display game over
 		}
 	}
@@ -272,9 +277,5 @@ public class Fox_Move : MonoBehaviour {
 
 	// face the enemy when taking damage
 	// ,........
-	
 
-	public void TryAgain(){														//Just to Call the level again
-		SceneManager.LoadScene("enemy-player attack");
-	}
 }

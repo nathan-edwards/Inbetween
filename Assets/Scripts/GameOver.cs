@@ -1,23 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-//jieying was here: making game over screen
-public class GameOver : MonoBehaviour
+public class gameover : MonoBehaviour
 {
+    // Start is called before the first frame update
+    public GameObject GameOverUI;
+    public GameObject player;
+    private int count=0;
 
-	//to get game over screen
-	public Image img;
+    public bool a;
+    private Fox_Move alive;
 
-	//to check if game ended
-	bool gameEnd = false;
+    void Update(){
+        alive=FindObjectOfType<Fox_Move>();
+        a = alive.isAlive;
+        print(a);
+        GameIsOver();
+    }
+    
+    public void GameIsOver(){
+        //display game over just once
+        if (a == false && count==0){
+            count+=1;
+            GameOverUI.SetActive(true);
+        }
+    }
 
-	//game over screen is hidden in unity so function to set screen to active/visible when game has ended
-    public void displayGameOver(){
-		if(!gameEnd){
-			gameEnd = true;
-			img.gameObject.SetActive(true);
-		}
+    public void Menu(){
+        GameOverUI.SetActive(false);
+        SceneManager.LoadScene(0);
+    }
+
+    public void TryAgain(){	
+         GameOverUI.SetActive(false);													//Just to Call the level again
+		SceneManager.LoadScene(1);
 	}
 }
