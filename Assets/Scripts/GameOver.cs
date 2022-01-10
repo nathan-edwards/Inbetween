@@ -34,6 +34,6 @@ public class gameover : MonoBehaviour
 
     public void TryAgain(){	
         GameOverUI.SetActive(false);													//Just to Call the level again
-		SceneManager.LoadScene(1);
+		SceneManager.LoadScene(2);
 	}
 }
