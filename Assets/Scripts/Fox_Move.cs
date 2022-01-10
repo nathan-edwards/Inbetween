@@ -1,6 +1,7 @@
 ﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Fox_Move : MonoBehaviour {
 
@@ -102,7 +103,6 @@ public class Fox_Move : MonoBehaviour {
 		Fall();
 		//Movement Animation
 		moveAnim();
-		
 	}
 
 
@@ -127,9 +127,6 @@ public class Fox_Move : MonoBehaviour {
 			}else{
 				anim.SetBool("Running",false);
 			}
-
-			
-	
 	}
 
 	void Turn(){
@@ -171,9 +168,10 @@ public class Fox_Move : MonoBehaviour {
 	
 	void AttackEnd(){
 		attacking=false;
-	}					
+	}	
 
-	// touch enemy 
+	public GameObject winUI;
+	// touch enemy or portal
 	void OnCollisionEnter(Collision other) {						//Case of Touch
 		if(other.gameObject.tag=="Enemy"){
 			// health goes down
@@ -182,8 +180,13 @@ public class Fox_Move : MonoBehaviour {
 			Vector3 dir = other.contacts[0].point - transform.position;
 			// We then get the opposite (-Vector3) and normalize it
 			float bounce = 6f; //amount of force to apply
-			print("eyyyy");
        		rb.AddForce(Vector3.up * 300);
+		}
+
+		if(other.gameObject.tag=="Portal" && (SceneManager. GetActiveScene () == SceneManager. GetSceneByName ("Biome 2")) ){
+			Debug.Log("touched portal in biome 2");
+			Time.timeScale =0f;
+			winUI.SetActive(true);	
 		}
 		
 	}
