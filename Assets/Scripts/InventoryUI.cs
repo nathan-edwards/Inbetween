@@ -7,13 +7,11 @@ using UnityEngine.UI;
 public class InventoryUI : MonoBehaviour
 {
 	public Transform inventorySlotsParentContainer;
-	//boolean to track if inventory screen/menu is open or not
-	private bool isDisplayed = false;
 
     void Update()
     {
 		UpdateInventoryContents();
-        OpenInventory();
+        // OpenInventory();
     }
 
 	//method to check list of items in inventory and update UI accordingly
@@ -52,14 +50,12 @@ public class InventoryUI : MonoBehaviour
 	//display inventory screen/menu method
 	void OpenInventory(){
 		//display & turn off display when Q is pressed
-		if(Input.GetKeyDown(KeyCode.Q) && !isDisplayed){
+		if(Input.GetKeyDown(KeyCode.Q) && inventorySlotsParentContainer.parent.gameObject.activeSelf == false){
 			//display
 			inventorySlotsParentContainer.parent.gameObject.SetActive(true);
-			isDisplayed = true;
-		} else if(Input.GetKeyDown(KeyCode.Q) && isDisplayed){
+		} else if(Input.GetKeyDown(KeyCode.Q) && inventorySlotsParentContainer.parent.gameObject.activeSelf == true){
 			//hide
 			inventorySlotsParentContainer.parent.gameObject.SetActive(false);
-			isDisplayed = false;
 		}
 	}
 }

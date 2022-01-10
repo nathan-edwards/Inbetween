@@ -7,26 +7,23 @@ using UnityEngine.UI;
 public class CraftingMenuUI : MonoBehaviour
 {
 	public Transform craftingSlotsContainer;
-	private bool isDisplayed = false;
 
     // Update is called once per frame
     void Update()
     {
-        OpenCraftingMenu();
+        // OpenCraftingMenu();
 		DisplayAllLearnedRecipes();
     }
 
 	//display crafting screen/menu method
 	void OpenCraftingMenu(){
 		//display & turn off display when Q is pressed
-		if(Input.GetKeyDown(KeyCode.E) && !isDisplayed){
+		if(Input.GetKeyDown(KeyCode.E) && craftingSlotsContainer.parent.gameObject.activeSelf == false){
 			//display
 			craftingSlotsContainer.parent.gameObject.SetActive(true);
-			isDisplayed = true;
-		} else if(Input.GetKeyDown(KeyCode.E) && isDisplayed){
+		} else if(Input.GetKeyDown(KeyCode.E) && craftingSlotsContainer.parent.gameObject.activeSelf == true){
 			//hide
 			craftingSlotsContainer.parent.gameObject.SetActive(false);
-			isDisplayed = false;
 
 			craftingSlotsContainer.parent.GetChild(2).GetComponent<CraftItemResultProfile>().HideRecipeDetails();
 		}

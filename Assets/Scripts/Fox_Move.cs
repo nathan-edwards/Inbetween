@@ -216,7 +216,7 @@ public class Fox_Move : MonoBehaviour {
 		if (isAlive == true){
 			health = Mathf.Clamp(health + d, 0, maxHealth);
 			//update health bar
-			// healthBar.updateHealthBar(health);
+			healthBar.updateHealthBar(health);
 			print("Player health is "+ health+ " right now");
 			checkAliveStatus();
 		}
@@ -234,7 +234,7 @@ public class Fox_Move : MonoBehaviour {
         //make sure hunger doesn't go above max or below min
         hunger = Mathf.Clamp(hunger + d, 0, maxHunger);
 		//update hunger bar
-		// hungerBar.updateHungerBar(hunger);
+		hungerBar.updateHungerBar(hunger);
     }
 
 	void depleteHealth(){

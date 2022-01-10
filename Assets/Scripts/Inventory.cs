@@ -50,15 +50,17 @@ public class Inventory : MonoBehaviour
 		//check if there is more than one item
 		//(to adjust for stacked items)
 		bool isMoreThanOne = false;
+
+		//find index of item in list
 		int index = 0;
 
 		for(int i = 0; i < itemList.Count; i++){
 			if(Equals(x.itemName, itemList[i].itemName)){
 				if(itemQuantity[i] > 1){
 					isMoreThanOne = true;
-					index = i;
-					break;
 				}
+				index = i;
+				break;
 			}
 		}
 
