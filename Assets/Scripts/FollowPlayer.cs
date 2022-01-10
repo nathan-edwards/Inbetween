@@ -18,8 +18,8 @@ using System.Collections;
 
     void Awake()
     {
-    rb = GetComponent<Rigidbody>();
-    detectRange *= detectRange;
+        rb = GetComponent<Rigidbody>();
+        detectRange *= detectRange;
     }
     
     void Start(){
