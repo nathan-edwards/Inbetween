@@ -7,15 +7,16 @@ public class wonGame : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject winUI;
+    
     public void Menu(){
         Time.timeScale =1f;
         winUI.SetActive(false);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Menu");
     }
 
     public void TryAgain(){	
         Time.timeScale =1f;
         winUI.SetActive(false);													//Just to Call the level again
-		SceneManager.LoadScene(2);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
 	}
 }
