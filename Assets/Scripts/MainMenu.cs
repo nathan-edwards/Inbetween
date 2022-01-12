@@ -32,7 +32,10 @@ public class MainMenu : MonoBehaviour
     public void Options()
     {
         Debug.Log("OPTIONS");
-        // Application.Quit();
+        
+        SceneManager.LoadScene("options");
     }
+
+    
 
 }
