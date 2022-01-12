@@ -6,12 +6,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "new sword item", menuName = "jay-is-items/sworditem")]
 public class SwordItem : Item
 {
-	//jieying was here: do u want to add attack stat?
-	// public int hungerStat;
+	Fox_Move player;
 
 	//override use method to equip sword to player
 	public override void Use()
 	{
 		Debug.Log("equip sword");
+		player = FindObjectOfType<Fox_Move>();
+		player.swordOn = true;
 	}
 }
