@@ -11,7 +11,7 @@ public class OpenSubItemMenu : MonoBehaviour
 {
 	public Transform craftingSlotsContainer;
 	public Transform inventorySlotsParentContainer;
-
+	
 	void Update(){
 		OpenInventory();
 	}

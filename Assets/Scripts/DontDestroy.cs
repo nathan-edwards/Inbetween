@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
 {
-	public Transform player;
+	// public Transform player;
 
 	//the UI - health, hunger, game over screen - to preserve between biomes
-	public GameObject canvas;
+	public Canvas healthHunger;
+	public Canvas inventory;
     // Update is called once per frame
     void Update()
     {
-        DontDestroyOnLoad(player.gameObject);
-		DontDestroyOnLoad(canvas);
+        // DontDestroyOnLoad(player.gameObject);
+		DontDestroyOnLoad(healthHunger);
+		DontDestroyOnLoad(inventory);
     }
 }

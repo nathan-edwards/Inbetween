@@ -15,7 +15,9 @@ public class HealthItem : Item
 	public override void Use()
 	{
 		//find player and update their health with the stat of the item
+		Debug.Log("here4");
 		player = FindObjectOfType<Fox_Move>();
+		Debug.Log("here5");
 		player.UpdateHealth(healthStat);
 		Debug.Log("added " + healthStat + "to player health");
 	}

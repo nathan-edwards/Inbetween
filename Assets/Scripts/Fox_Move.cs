@@ -219,7 +219,9 @@ public class Fox_Move : MonoBehaviour {
 		if (isAlive == true){
 			health = Mathf.Clamp(health + d, 0, maxHealth);
 			//update health bar
+			Debug.Log("here2");
 			healthBar.updateHealthBar(health);
+			Debug.Log("here3");
 			print("Player health is "+ health+ " right now");
 			checkAliveStatus();
 		}

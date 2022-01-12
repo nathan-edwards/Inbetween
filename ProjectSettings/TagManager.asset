@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Portal
   - Enemy
+  - inventory
   layers:
   - Default
   - TransparentFX
