@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class backButtonForControls : MonoBehaviour
 {
@@ -32,10 +33,13 @@ public class backButtonForControls : MonoBehaviour
     public void Resume(){
         // CONTROLS disabled
         controlsUI.SetActive(false);
-        // MENU enabled
-        MenuUI.SetActive(true);
         Time.timeScale =1f;
         GamePaused= false;
+
+        //if menu scene
+        if(SceneManager. GetActiveScene () == SceneManager. GetSceneByName ("Menu") ){
+            MenuUI.SetActive(true);
+        }
     }
     
 }
