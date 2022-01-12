@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class Options_Script : MonoBehaviour
 {
     public int level;
+    public int damagerate;
+    public int attackRange;
     public GameObject easyUI;
     public GameObject mediumUI;
     public GameObject hardUI;
@@ -18,6 +20,8 @@ public class Options_Script : MonoBehaviour
         mediumUI.SetActive(false);
         hardUI.SetActive(false);
         level=1;
+        damagerate=5;
+        attackRange=10;
         Debug.Log("easy level");
     }
 
@@ -26,6 +30,8 @@ public class Options_Script : MonoBehaviour
         hardUI.SetActive(false);
         easyUI.SetActive(false);
         level=2;
+        damagerate=10;
+        attackRange=15;
         Debug.Log("medium level");
     }
 
@@ -34,6 +40,8 @@ public class Options_Script : MonoBehaviour
         mediumUI.SetActive(false);
         easyUI.SetActive(false);
         level=3;
+        damagerate=15;
+        attackRange=20;
         Debug.Log("hard level");
     }
 
