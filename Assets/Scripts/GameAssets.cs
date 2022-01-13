@@ -17,6 +17,7 @@ public class GameAssets : MonoBehaviour
 
     public SoundAudioClip[] soundAudioClipArray;
 
+    // This will show in the inspector in the editor for assignment of sounds from the list given in SoundManager
     [System.Serializable]
     public class SoundAudioClip
     {

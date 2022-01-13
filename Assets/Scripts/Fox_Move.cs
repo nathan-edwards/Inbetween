@@ -122,6 +122,7 @@ public class Fox_Move : MonoBehaviour {
 				walking=true;
 				// down=true;
 			}
+			// Play Player Move Sound
 			SoundManager.PlaySound(SoundManager.Sound.PlayerMove, player.position);
 			
 		}
@@ -171,6 +172,7 @@ public class Fox_Move : MonoBehaviour {
 				sp.flipX=false;
 			}
 			rb.GetComponent<attack>().Attack();
+			// Play Player Attack Sound
 			SoundManager.PlaySound(SoundManager.Sound.PlayerAttack, player.position);
         }
 	}

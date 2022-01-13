@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
 
  
     public void TakeDamage(int damage){
+        // Play Enemy Hit Sound
+        SoundManager.PlaySound(SoundManager.Sound.EnemyHit, transform.position);
         // animation for hurt
         if(currHealth <=0){
             Die();
@@ -27,6 +29,8 @@ public class Enemy : MonoBehaviour
     }
 
     void Die(){
+        // Play Enemy Death Sound
+        SoundManager.PlaySound(SoundManager.Sound.EnemyDie, transform.position);
         // animation for dying
         anim.SetBool("die",true);
         anim.SetTrigger("die");
