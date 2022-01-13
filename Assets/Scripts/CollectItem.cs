@@ -13,7 +13,13 @@ public class CollectItem : MonoBehaviour
 			// Play Item Collect Sound
 			SoundManager.PlaySound(SoundManager.Sound.PlayerPickup);
 			// Add the item player touched to inventory before removing it from world
-			Inventory.inventory.AddItem(item);
+			if (gameObject.name.Contains("Checkpoint"))
+			{
+				gameObject.GetComponent<Checkpoints>().ActivateCheckpoint();
+			} else
+			{
+				Inventory.inventory.AddItem(item);
+			}
 			Destroy(this.gameObject);
 		}
 	}

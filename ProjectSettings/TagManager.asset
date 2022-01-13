@@ -8,7 +8,7 @@ TagManager:
   - Enemy
   - inventory
   - Health
-  - Checkpoint 1
+  - Checkpoint1
   layers:
   - Default
   - TransparentFX

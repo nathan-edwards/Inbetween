@@ -18,11 +18,6 @@ public class attack : MonoBehaviour
 		sp=GetComponent<SpriteRenderer>();
     }
 
-    void Update()
-    {
-        
-    }
-
     public void Attack(){
         anim.SetTrigger("Attack");
     // for 3d enemies
