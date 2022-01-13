@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Options_Script : MonoBehaviour
 {
-    public int level;
+    public static int level;
     public int damagerate;
     public int attackRange;
     public GameObject easyUI;
@@ -14,7 +14,9 @@ public class Options_Script : MonoBehaviour
     //starve faster
     //enemy attack range increased
     //enemy damage increased
-
+    void Start(){
+        level=1;
+    }
     public void easyLevel(){
         easyUI.SetActive(true);
         mediumUI.SetActive(false);

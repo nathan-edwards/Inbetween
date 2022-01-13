@@ -23,8 +23,8 @@ public class Fox_Move : MonoBehaviour {
     public float maxHunger = 100;
 	public float moveSpeed = 3f;
 
-	// public Options_Script damage, levelDiff;
-	public int damageRate, current_level;
+	// Options_Script damage, levelDiff;
+	public int damageRate;
 
 	//jieying was here: variables for timer & wait time respectively
 	//feel free to change wait time (t2)
@@ -47,18 +47,22 @@ public class Fox_Move : MonoBehaviour {
         hunger = maxHunger;
 		dieCount=0;
 		
-		//change timing later
-        // if (current_level == 1){
-		//   Debug.Log("ahhhhh 1");
-        //   InvokeRepeating("Starve", 2.0f, 0.5f);
-        // }else if (current_level == 2){
-        //   InvokeRepeating("Starve", 5.0f, 0.5f);
-        // }else{
-        //   InvokeRepeating("Starve", 7.0f, 0.5f);
-        // }
+		// starve based on level
+        if (Options_Script.level == 1){
+          InvokeRepeating("Starve", 2.0f, 0.5f);
+		  damageRate=5;
+        }else if (Options_Script.level == 2){
+          InvokeRepeating("Starve", 5.0f, 1.5f);
+		  damageRate=10;
+        }else{
+          InvokeRepeating("Starve", 7.0f, 2.5f);
+		  damageRate=15;
+        }
+
         //change timing later
         InvokeRepeating("Starve", 5.0f, 0.5f);
 		isAlive = true;
+		
 	}
 	void Update(){
 		// get damage level from level difficulty
@@ -68,8 +72,10 @@ public class Fox_Move : MonoBehaviour {
 
         // get difficulty level
         // levelDiff= FindObjectOfType<Options_Script>();
+		// // Debug.Log(levelDiff);
         // current_level= levelDiff.level;
-            // Debug.Log(current_level);
+		// damageRate= Options_Script.damagerate;
+        Debug.Log(Options_Script.level);
 	}
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -215,7 +221,7 @@ public class Fox_Move : MonoBehaviour {
 		anim.SetTrigger("Damage");
 		// rb.velocity *= -100;
 		// transform.LookAt(other.gameObject.tag("Enemy"));
-		UpdateHealth(-10);
+		UpdateHealth(-1 * damageRate);
 		//jump back when hurt
 	}
 
