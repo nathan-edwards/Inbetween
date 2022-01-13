@@ -1,6 +1,7 @@
 ﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Collections;
+using UnityEditorInternal;
 using UnityEngine.SceneManagement;
 
 public class Fox_Move : MonoBehaviour {
@@ -121,6 +122,8 @@ public class Fox_Move : MonoBehaviour {
 				walking=true;
 				// down=true;
 			}
+			SoundManager.PlaySound(SoundManager.Sound.PlayerMove, player.position);
+			
 		}
 		//chekc if falling
 		Fall();
@@ -168,7 +171,7 @@ public class Fox_Move : MonoBehaviour {
 				sp.flipX=false;
 			}
 			rb.GetComponent<attack>().Attack();
-		
+			SoundManager.PlaySound(SoundManager.Sound.PlayerAttack, player.position);
         }
 	}
 	void Fall(){
