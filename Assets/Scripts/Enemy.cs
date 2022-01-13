@@ -48,7 +48,6 @@ public class Enemy : MonoBehaviour
     float CalculateHealth()
     {
         float result = currHealth / maxHealth;
-        Debug.Log(result);
         return result;
     }
 }
