@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public int maxHealth =100;
-    public int currHealth;
+    public float maxHealth = 100;
+    public float currHealth;
     public Animator anim;
     public Transform transform;
-    void Start()
+    public GameObject healthBarUI;
+    public Slider slider;
+    private void Start()
     {
-        currHealth= maxHealth;
+        currHealth = maxHealth;
+        slider.value = CalculateHealth();
     }
 
+    private void Update()
+    {
+        slider.value = CalculateHealth();
+    }
  
     public void TakeDamage(int damage){
         // Play Enemy Hit Sound
@@ -22,7 +30,6 @@ public class Enemy : MonoBehaviour
             Die();
         }
         currHealth -= damage;
-
         if(currHealth <=0){
             Die();
         }
@@ -36,5 +43,12 @@ public class Enemy : MonoBehaviour
         anim.SetTrigger("die");
         //disable enemy after death
         Destroy(gameObject);
+    }
+
+    float CalculateHealth()
+    {
+        float result = currHealth / maxHealth;
+        Debug.Log(result);
+        return result;
     }
 }
