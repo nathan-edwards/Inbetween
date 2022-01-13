@@ -1,7 +1,6 @@
 ﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Collections;
-using UnityEditorInternal;
 using UnityEngine.SceneManagement;
 
 public class Fox_Move : MonoBehaviour {
