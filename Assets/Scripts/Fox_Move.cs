@@ -14,7 +14,7 @@ public class Fox_Move : MonoBehaviour {
 	public Transform Enemy;
 	public HealthBar healthBar;
 	public HungerBar hungerBar;
-	public bool isAlive;
+	public static bool isAlive;
 
 	//character's needs
     private int health;
@@ -65,7 +65,7 @@ public class Fox_Move : MonoBehaviour {
 	}
 	void Update(){
 		
-        Debug.Log(Options_Script.level);
+        // Debug.Log(Options_Script.level);
 	}
 	// Update is called once per frame
 	void FixedUpdate () {

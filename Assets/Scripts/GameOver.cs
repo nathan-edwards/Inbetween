@@ -3,25 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class gameover : MonoBehaviour
+public class GameOver : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject GameOverUI;
-    public GameObject player;
+    // public GameObject player;
     private int count=0;
 
     public bool a;
     private Fox_Move alive;
 
     void Update(){
-        alive=FindObjectOfType<Fox_Move>();
-        a = alive.isAlive;
+        // alive=FindObjectOfType<Fox_Move>();
+        // a = alive.isAlive;
+        print(Fox_Move.isAlive);
         GameIsOver();
     }
     
     public void GameIsOver(){
         //display game over just once
-        if (a == false && count==0){
+        Debug.Log("you died");
+        if (Fox_Move.isAlive == false && count==0){
             count+=1;
             GameOverUI.SetActive(true);
         }
