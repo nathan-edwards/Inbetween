@@ -11,7 +11,6 @@ public class SwordItem : Item
 	//override use method to equip sword to player
 	public override void Use()
 	{
-		Debug.Log("equip sword");
 		player = FindObjectOfType<Fox_Move>();
 		player.swordOn = true;
 	}
