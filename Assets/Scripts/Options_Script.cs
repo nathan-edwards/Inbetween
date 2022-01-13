@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class Options_Script : MonoBehaviour
 {
     public static int level;
-    public int damagerate;
-    public int attackRange;
+    public static int damagerate;
+    public static int attackRange;
     public GameObject easyUI;
     public GameObject mediumUI;
     public GameObject hardUI;
@@ -15,7 +15,10 @@ public class Options_Script : MonoBehaviour
     //enemy attack range increased
     //enemy damage increased
     void Start(){
+        //if no level selected then considered level easy
         level=1;
+        damagerate=5;
+        attackRange=10;
     }
     public void easyLevel(){
         easyUI.SetActive(true);

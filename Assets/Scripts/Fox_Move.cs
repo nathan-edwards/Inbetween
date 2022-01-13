@@ -23,6 +23,7 @@ public class Fox_Move : MonoBehaviour {
     private float hunger;
     public float maxHunger = 100;
 	public float moveSpeed = 3f;
+	public float starving;
 
 	// Options_Script damage, levelDiff;
 	public int damageRate;
@@ -48,34 +49,23 @@ public class Fox_Move : MonoBehaviour {
         hunger = maxHunger;
 		dieCount=0;
 		
-		// starve based on level
+		// starve & damage based on level
         if (Options_Script.level == 1){
-          InvokeRepeating("Starve", 2.0f, 0.5f);
 		  damageRate=5;
+		  starving=0.1f;
         }else if (Options_Script.level == 2){
-          InvokeRepeating("Starve", 5.0f, 1.5f);
 		  damageRate=10;
+		  starving=0.3f;
         }else{
-          InvokeRepeating("Starve", 7.0f, 2.5f);
 		  damageRate=15;
+		  starving=0.5f;
         }
-
-        //change timing later
-        InvokeRepeating("Starve", 5.0f, 0.5f);
 		isAlive = true;
+		InvokeRepeating("Starve", 1.0f, 0.5f);
 		
 	}
 	void Update(){
-		// get damage level from level difficulty
-        // damage= FindObjectOfType<Options_Script>();
-        // damageRate= damage.damagerate;
-        // Debug.Log(damageRate);
-
-        // get difficulty level
-        // levelDiff= FindObjectOfType<Options_Script>();
-		// // Debug.Log(levelDiff);
-        // current_level= levelDiff.level;
-		// damageRate= Options_Script.damagerate;
+		
         Debug.Log(Options_Script.level);
 	}
 	// Update is called once per frame
@@ -257,9 +247,7 @@ public class Fox_Move : MonoBehaviour {
 
 	void Starve(){
 		if(isAlive){
-			UpdateHunger(-0.1f);
-			//update hunger bar UI
-			// hungerBar.updatewHungerBar(hunger);
+			UpdateHunger(-1 * starving);
 		}
     }
 
