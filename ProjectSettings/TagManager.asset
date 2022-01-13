@@ -7,6 +7,7 @@ TagManager:
   - Portal
   - Enemy
   - inventory
+  - Health
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Water
   - UI
   - enemy2
-  - 
+  - Health
   - 
   - 
   - 

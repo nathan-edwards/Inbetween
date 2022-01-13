@@ -23,7 +23,7 @@ public class Fox_Move : MonoBehaviour {
     public float maxHunger = 100;
 	public float moveSpeed = 3f;
 
-	public Options_Script damage, levelDiff;
+	// public Options_Script damage, levelDiff;
 	public int damageRate, current_level;
 
 	//jieying was here: variables for timer & wait time respectively
@@ -62,12 +62,12 @@ public class Fox_Move : MonoBehaviour {
 	}
 	void Update(){
 		// get damage level from level difficulty
-        damage= FindObjectOfType<Options_Script>();
+        // damage= FindObjectOfType<Options_Script>();
         // damageRate= damage.damagerate;
         // Debug.Log(damageRate);
 
         // get difficulty level
-        levelDiff= FindObjectOfType<Options_Script>();
+        // levelDiff= FindObjectOfType<Options_Script>();
         // current_level= levelDiff.level;
             // Debug.Log(current_level);
 	}
