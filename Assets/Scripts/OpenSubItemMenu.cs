@@ -16,16 +16,19 @@ public class OpenSubItemMenu : MonoBehaviour
 		OpenInventory();
 	}
 
+	//make crafting visible when crafting menu title selected
     public void OpenCraftingFromInventory(){
 		craftingSlotsContainer.parent.gameObject.SetActive(true);
 		inventorySlotsParentContainer.parent.gameObject.SetActive(false);
 	}
 
+	//make inventory visible when inventory title selected
 	public void OpenInventoryFromCrafting(){
 		inventorySlotsParentContainer.parent.gameObject.SetActive(true);
 		craftingSlotsContainer.parent.gameObject.SetActive(false);
 	}
 
+	//open inventory using Q key press
 	void OpenInventory(){
 		//display & turn off display when Q is pressed
 		if(Input.GetKeyDown(KeyCode.Q) && inventorySlotsParentContainer.parent.gameObject.activeSelf == false){

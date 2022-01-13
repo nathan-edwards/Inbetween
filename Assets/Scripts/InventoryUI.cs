@@ -11,7 +11,6 @@ public class InventoryUI : MonoBehaviour
     void Update()
     {
 		UpdateInventoryContents();
-        // OpenInventory();
     }
 
 	//method to check list of items in inventory and update UI accordingly
@@ -44,18 +43,6 @@ public class InventoryUI : MonoBehaviour
 			inventorySlotsParentContainer.GetChild(i).GetChild(1).GetComponent<Text>().enabled = true;
 			//make the item slot interactable/clickable
 			inventorySlotsParentContainer.GetChild(i).GetComponent<Button>().interactable = true;
-		}
-	}
-
-	//display inventory screen/menu method
-	void OpenInventory(){
-		//display & turn off display when Q is pressed
-		if(Input.GetKeyDown(KeyCode.Q) && inventorySlotsParentContainer.parent.gameObject.activeSelf == false){
-			//display
-			inventorySlotsParentContainer.parent.gameObject.SetActive(true);
-		} else if(Input.GetKeyDown(KeyCode.Q) && inventorySlotsParentContainer.parent.gameObject.activeSelf == true){
-			//hide
-			inventorySlotsParentContainer.parent.gameObject.SetActive(false);
 		}
 	}
 }

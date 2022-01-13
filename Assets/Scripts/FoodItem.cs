@@ -14,8 +14,9 @@ public class FoodItem : Item
 	public override void Use()
 	{
 		//find player and update their hunger with the stat of the food item
+		//then remove item from inventory
 		player = FindObjectOfType<Fox_Move>();
 		player.UpdateHunger((float)hungerStat);
-		Debug.Log("added " + hungerStat + "to player hunger");
+		Inventory.inventory.RemoveItem(this);
 	}
 }

@@ -16,10 +16,6 @@ public class UseItem : MonoBehaviour
 	//use item, then remove item from inventory, hide the side profile that was opened on the item that got used
 	public void UseTheItem(){
 		item.Use();
-		if(item is SwordItem){
-			Debug.Log("wow");
-		}
-		Inventory.inventory.RemoveItem(item);
 
 		//checks inventory quantity of used item to see if to display item profile or not
 		//better UX (in my opinion)

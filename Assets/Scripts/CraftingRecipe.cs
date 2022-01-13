@@ -12,8 +12,11 @@ public class CraftingRecipe : Item
 	public int[] quantities;
 	public Item result;
 
+	//add new recipe to player's learned recipes list
+	//then remove item from inventory
 	public override void Use(){
 		CraftingMenu.craftingMenu.LearnRecipe(this);
+		Inventory.inventory.RemoveItem(this);
 	}
 
 	public void CreateItem(){

@@ -30,7 +30,8 @@ public class AssignCamera : MonoBehaviour
 
 		// find portal
 		portal = GameObject.FindWithTag("Portal");
-
+		//assign health hunger bars to transition biomes script using code
+		//since it cant be done via inspector
 		healthHunger2= GameObject.FindWithTag("Health");
 		portal.GetComponent<transitionBiomes>().canvasUI = healthHunger2;
 

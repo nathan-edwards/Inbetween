@@ -12,17 +12,17 @@ public class ItemProfile : MonoBehaviour
 	public Transform profile;
 
 	public void DisplayItemDetails(){
-		//change UI from a "no selected item" state
+		//change UI from a "no selected item" state to selected item state
 		profile.GetComponent<Image>().color = new Color(1, 1, 1, 1);
 
 		//change text to that of item name &
-		//change text colour from a "no selected item" state
+		//change text colour from a "no selected item" state to selected item state
 		profile.GetChild(0).GetComponent<Text>().text = item.itemName;
 		profile.GetChild(0).GetComponent<Text>().fontStyle = FontStyle.Normal;
 		profile.GetChild(0).GetComponent<Text>().color = new Color(1, 1, 1, 1);
 
 		//change text to that of item description &
-		//change text colour from a "no selected item" state
+		//change text colour from a "no selected item" state to selected item state
 		profile.GetChild(1).GetComponent<Text>().text = item.itemDesc;
 		profile.GetChild(1).GetComponent<Text>().color = new Color(1, 1, 1, 1);
 

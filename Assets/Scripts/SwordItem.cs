@@ -7,11 +7,13 @@ using UnityEngine;
 public class SwordItem : Item
 {
 	Fox_Move player;
+	bool isEquipped = false;
 
 	//override use method to equip sword to player
 	public override void Use()
 	{
 		player = FindObjectOfType<Fox_Move>();
 		player.swordOn = true;
+		isEquipped = true;
 	}
 }

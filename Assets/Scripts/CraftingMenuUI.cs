@@ -8,26 +8,10 @@ public class CraftingMenuUI : MonoBehaviour
 {
 	public Transform craftingSlotsContainer;
 
-    // Update is called once per frame
     void Update()
     {
-        // OpenCraftingMenu();
 		DisplayAllLearnedRecipes();
     }
-
-	//display crafting screen/menu method
-	void OpenCraftingMenu(){
-		//display & turn off display when Q is pressed
-		if(Input.GetKeyDown(KeyCode.E) && craftingSlotsContainer.parent.gameObject.activeSelf == false){
-			//display
-			craftingSlotsContainer.parent.gameObject.SetActive(true);
-		} else if(Input.GetKeyDown(KeyCode.E) && craftingSlotsContainer.parent.gameObject.activeSelf == true){
-			//hide
-			craftingSlotsContainer.parent.gameObject.SetActive(false);
-
-			craftingSlotsContainer.parent.GetChild(2).GetComponent<CraftItemResultProfile>().HideRecipeDetails();
-		}
-	}
 
 	void DisplayAllLearnedRecipes(){
 		//loop through list of items and set the sprite to the sprite of the item in the list

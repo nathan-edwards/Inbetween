@@ -10,6 +10,9 @@ public class CraftItemResultProfile : MonoBehaviour
 	public Transform profile;
 
     public void DisplayRecipeDetails(){
+		//clean UI before drawing new recipe details
+		HideRecipeDetails();
+
 		//change UI from a "no selected item" state
 		profile.GetComponent<Image>().color = new Color(1, 1, 1, 1);
 
