@@ -12,19 +12,25 @@ public static class SoundManager
         PlayerPickup,
         PlayerMove,
         PlayerAttack,
+        PlayerHit,
+        PlayerDeath,
         EnemyHit,
         EnemyDie,
+        EnemyAttack,
     }
 
     // A dictionary that will store the last time a certain sound has been played to
     // easier control how often a sound is player such as the player movement
     private static Dictionary<Sound, float> soundTimerDictionary;
-
+    private static GameObject oneShotGameObject;
+    private static AudioSource oneShotAudioSource;
+    
     // Initializes the dictionary to reference later
     public static void Initialize()
     {
         soundTimerDictionary = new Dictionary<Sound, float>();
         soundTimerDictionary[Sound.PlayerMove] = 0f;
+        soundTimerDictionary[Sound.PlayerHit] = 0f;
     }
     
     // Function that plays the audio on the object this is called when a position for the sound is not required
@@ -32,12 +38,17 @@ public static class SoundManager
     {
         if (CanPlaySound(sound))
         {
-            // Creates a new sound object in the scene to play sound
-            GameObject soundGameObject = new GameObject("Sound");
-            // Attaches a AudioSource component to the newly created Sound game object
-            AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+            if (oneShotGameObject == null)
+            {
+                // Creates a new sound object in the scene to play sound
+                oneShotGameObject = new GameObject("One Shot Sound");
+                // Attaches a AudioSource component to the newly created Sound game object
+                oneShotAudioSource = oneShotGameObject.AddComponent<AudioSource>();
+                
+            }
+            
             // Places the audio clip into the object and plays it once
-            audioSource.PlayOneShot(GetAudioClip(sound));
+            oneShotAudioSource.PlayOneShot(GetAudioClip(sound));
         }
     }
 
@@ -55,6 +66,8 @@ public static class SoundManager
             // Places the audio clip into the object and plays it once
             audioSource.clip = GetAudioClip(sound);
             audioSource.Play();
+            
+            Object.Destroy(soundGameObject, audioSource.clip.length);
         }
     }
  
@@ -74,6 +87,26 @@ public static class SoundManager
                     // A half a second delay is added between each sound play
                     float playerMoveTimerMax = .5f;
                     if (lastTimePlayed + playerMoveTimerMax < Time.time)
+                    {
+                        soundTimerDictionary[sound] = Time.time;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return true;
+                }
+            case Sound.PlayerHit:
+                if (soundTimerDictionary.ContainsKey(sound))
+                {
+                    float lastTimePlayed = soundTimerDictionary[sound];
+                    // A half a second delay is added between each sound play
+                    float playerHitTimerMax = 1f;
+                    if (lastTimePlayed + playerHitTimerMax < Time.time)
                     {
                         soundTimerDictionary[sound] = Time.time;
                         return true;

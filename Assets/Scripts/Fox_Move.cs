@@ -213,6 +213,7 @@ public class Fox_Move : MonoBehaviour {
 	public float m_Thrust = 20f;
 	void Hurt(){
 		// decrease health here
+		SoundManager.PlaySound(SoundManager.Sound.PlayerHit, player.position);
 		anim.SetTrigger("Damage");
 		// rb.velocity *= -100;
 		// transform.LookAt(other.gameObject.tag("Enemy"));
@@ -225,9 +226,10 @@ public class Fox_Move : MonoBehaviour {
 		// isAlive=false;
 		if (dieCount==0){
 			dieCount+=1;
+			SoundManager.PlaySound(SoundManager.Sound.PlayerDeath, player.position);
 			anim.SetTrigger("Dead");
 
-		// display game over
+			// display game over
 		}
 	}
 

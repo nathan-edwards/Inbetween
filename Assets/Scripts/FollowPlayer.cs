@@ -64,6 +64,7 @@ using System.Collections;
         }
         if (distsqr <attackRange){
             // attack animation
+            SoundManager.PlaySound(SoundManager.Sound.EnemyAttack, transform.position);
             anim.SetTrigger("attack");
         }
     }
