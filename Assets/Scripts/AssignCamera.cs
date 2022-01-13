@@ -8,6 +8,7 @@ public class AssignCamera : MonoBehaviour
 	Canvas inventory;
 	Transform healthHunger;
 	Fox_Move player;
+	GameObject portal;
 
     // Start is called before the first frame update
     void Start()
@@ -26,5 +27,9 @@ public class AssignCamera : MonoBehaviour
 		//assign player the hunger and health UI bars
 		player.healthBar = healthHunger.GetChild(0).GetComponent<HealthBar>();
 		player.hungerBar = healthHunger.GetChild(1).GetComponent<HungerBar>();
+
+		// find portal
+		portal = GameObject.FindWithTag("Portal");
+		portal.GetComponent<transitionBiomes>().canvasUI = healthHunger;
     }
 }

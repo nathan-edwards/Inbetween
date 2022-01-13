@@ -398,6 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlsUI: {fileID: 4882960312073356962}
+  MenuUI: {fileID: 0}
 --- !u!1 &4882960311110567132
 GameObject:
   m_ObjectHideFlags: 0

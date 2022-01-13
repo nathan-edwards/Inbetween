@@ -159,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -148}
-  m_SizeDelta: {x: 140, y: 70}
+  m_AnchoredPosition: {x: 3.2998, y: -148.7084}
+  m_SizeDelta: {x: 143.1864, y: 68.5832}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &98977801
 MonoBehaviour:
@@ -292,8 +292,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 19}
-  m_SizeDelta: {x: 240, y: 70}
+  m_AnchoredPosition: {x: 3.2998, y: 14.9113}
+  m_SizeDelta: {x: 245.4624, y: 68.5832}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196756575
 MonoBehaviour:
@@ -488,6 +488,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_controls
       objectReference: {fileID: 0}
+    - target: {fileID: 4882960311088989834, guid: 2c85527a2928f4cca9831a40f2a0a9cc, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c85527a2928f4cca9831a40f2a0a9cc, type: 3}
 --- !u!1 &240740408 stripped
@@ -531,8 +535,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: -65}
-  m_SizeDelta: {x: 299.9714, y: 70}
+  m_AnchoredPosition: {x: 8.4136, y: -67.3885}
+  m_SizeDelta: {x: 306.7986, y: 68.5832}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &348965418
 MonoBehaviour:
@@ -664,8 +668,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 109}
-  m_SizeDelta: {x: 150, y: 70}
+  m_AnchoredPosition: {x: 3.2998, y: 96}
+  m_SizeDelta: {x: 153.4139, y: 68.5832}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &444881917
 MonoBehaviour:
@@ -979,8 +983,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1273,7 +1277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.529663, y: 294.38794}
+  m_AnchoredPosition: {x: -5.763177, y: 273.00003}
   m_SizeDelta: {x: 610, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &846846139
@@ -1348,8 +1352,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.529694, y: -152.38794}
-  m_SizeDelta: {x: 320.5742, y: 423.0475}
+  m_AnchoredPosition: {x: -3, y: -100}
+  m_SizeDelta: {x: 321.0411, y: 373.0089}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &981580721
 GameObject:
@@ -1435,8 +1439,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1600,7 +1604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1630,7 +1634,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &1217554700
 RectTransform:
@@ -1751,8 +1755,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1885,8 +1889,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

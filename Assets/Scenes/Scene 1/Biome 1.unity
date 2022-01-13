@@ -726,6 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4158892fd5150459a94184b04085fd7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasUI: {fileID: 0}
 --- !u!1001 &34675906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46785,15 +46786,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1320872636616895170, guid: ed6d7c66c9b724a68b16b690a10f2d5a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 72.37
+      value: 44.67
       objectReference: {fileID: 0}
     - target: {fileID: 1320872636616895170, guid: ed6d7c66c9b724a68b16b690a10f2d5a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 106.71
+      value: 119.46
       objectReference: {fileID: 0}
     - target: {fileID: 1320872636616895170, guid: ed6d7c66c9b724a68b16b690a10f2d5a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 185.87
+      value: 195.67
       objectReference: {fileID: 0}
     - target: {fileID: 1320872636616895170, guid: ed6d7c66c9b724a68b16b690a10f2d5a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48319,6 +48320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_controls
       objectReference: {fileID: 0}
+    - target: {fileID: 4882960311088989834, guid: 2c85527a2928f4cca9831a40f2a0a9cc, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4882960311088989835, guid: 2c85527a2928f4cca9831a40f2a0a9cc, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -48333,7 +48338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4882960312073356989, guid: 2c85527a2928f4cca9831a40f2a0a9cc, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1069
+      value: 1134
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c85527a2928f4cca9831a40f2a0a9cc, type: 3}
@@ -51773,6 +51778,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4690969330290601195, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4690969331641114780, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -51865,9 +51874,21 @@ PrefabInstance:
       propertyPath: m_IgnoreReversedGraphics
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4690969331641114978, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690969331641114979, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4690969331641114983, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
       propertyPath: m_Name
       value: Canvas_Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690969331641114983, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
@@ -51878,6 +51899,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6511442641410225552, guid: a40a3aebe6f9b48e3ae54a650e7e10ad, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6511442641410225553, guid: a40a3aebe6f9b48e3ae54a650e7e10ad, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -52128,7 +52153,7 @@ PrefabInstance:
       objectReference: {fileID: 1977008299}
     - target: {fileID: 392159105923809180, guid: 2475c847751a7494392c1a338fbe32ba, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 392159105923809181, guid: 2475c847751a7494392c1a338fbe32ba, type: 3}
       propertyPath: m_Pivot.x
