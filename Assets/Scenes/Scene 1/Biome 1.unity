@@ -52038,6 +52038,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4690969330449182939, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 76
+      objectReference: {fileID: 0}
     - target: {fileID: 4690969331641114780, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -52132,7 +52136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4690969331641114978, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
       propertyPath: m_UiScaleMode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4690969331641114979, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
       propertyPath: m_SortingOrder
@@ -52145,6 +52149,10 @@ PrefabInstance:
     - target: {fileID: 4690969331641114983, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690969331941808243, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 125.2887
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
