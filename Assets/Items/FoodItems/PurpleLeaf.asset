@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c647373b50047844f990dd9b7df1d683, type: 3}
-  m_Name: HealthPotion
+  m_Script: {fileID: 11500000, guid: 999402a90ae98634fb2547ffef4b205f, type: 3}
+  m_Name: PurpleLeaf
   m_EditorClassIdentifier: 
-  itemName: Health Potion
-  itemDesc: When times get rough, try drinking it.
-  itemImg: {fileID: 21300000, guid: 14f7cb3547c684418a275a5a63ed192a, type: 3}
-  healthStat: 10
+  itemName: Purple Leaf
+  itemDesc: Looks like one of your five a day.
+  itemImg: {fileID: 21300000, guid: 0bcc8a494c9231646a42f1faf35cedb3, type: 3}
+  hungerStat: 5

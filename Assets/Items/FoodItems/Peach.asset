@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Peach
   m_EditorClassIdentifier: 
   itemName: Peach
-  itemDesc: this is actually peach the 2nd but (sparkles) special
+  itemDesc: Juicy.
   itemImg: {fileID: 21300000, guid: 31818735c8400dd41b9d5d8b26e1c0a3, type: 3}
   hungerStat: 10

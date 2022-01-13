@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c647373b50047844f990dd9b7df1d683, type: 3}
-  m_Name: HealthPotion
+  m_Name: MysteriousPlant
   m_EditorClassIdentifier: 
-  itemName: Health Potion
-  itemDesc: When times get rough, try drinking it.
-  itemImg: {fileID: 21300000, guid: 14f7cb3547c684418a275a5a63ed192a, type: 3}
-  healthStat: 10
+  itemName: Red Flower
+  itemDesc: Ugly and bitter... which means it's probably good for you.
+  itemImg: {fileID: 21300000, guid: 1d38ca9b79545e84ab75bd05390a63b0, type: 3}
+  healthStat: 5
