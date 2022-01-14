@@ -9,6 +9,9 @@ Your objective is to navigate through the world, looking for the portals that wi
 Controls:
 
 - Movement - WASD or Directional Arrows
+- Sprint - WASD or Directionals Arrows + Z
+- Attack - Spacebar
+- Inventory (open/close) - Q
 
 # Group Members
 
