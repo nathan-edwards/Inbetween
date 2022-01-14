@@ -18,7 +18,7 @@ RenderSettings:
   m_FogColor: {r: 1, g: 1, b: 1, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.01
-  m_LinearFogStart: 5
+  m_LinearFogStart: 20
   m_LinearFogEnd: 250
   m_AmbientSkyColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
@@ -24606,13 +24606,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040801238}
-  m_LocalRotation: {x: -0.00001488243, y: 0.004511646, z: -0.0032986181, w: 0.9999844}
-  m_LocalPosition: {x: -91.3026, y: -61, z: -264.5595}
+  m_LocalRotation: {x: 0, y: 0, z: -0.0017453891, w: 0.9999985}
+  m_LocalPosition: {x: -91.3026, y: -61.1, z: -264.5595}
   m_LocalScale: {x: 44.046513, y: 0.22, z: 3.95548}
   m_Children: []
   m_Father: {fileID: 1118667468}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0.517, z: -0.378}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.2}
 --- !u!224 &1041968119 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6926781776573773057, guid: d1b782046b651eb40baea9c6ecdc643e, type: 3}
@@ -24724,8 +24724,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054826027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.71, y: 103.23, z: 132.34}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: 21.71, y: 103.2, z: 132.34}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 299958008}
   m_Father: {fileID: 0}
@@ -27117,7 +27117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6339062923936471316, guid: 99e11d2fcce214757809781e608f09ed, type: 3}
       propertyPath: m_Name
-      value: Enemy Mini-Boss
+      value: Big Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6339062923936471326, guid: 99e11d2fcce214757809781e608f09ed, type: 3}
       propertyPath: player
