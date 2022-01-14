@@ -8,14 +8,14 @@ public class FoodItem : Item
 {
 	//stat to add to player hunger when they use food item
 	public int hungerStat;
-	Fox_Move player;
+	PlayerMove player;
 
 	// override use method to add to player hunger
 	public override void Use()
 	{
 		//find player and update their hunger with the stat of the food item
 		//then remove item from inventory
-		player = FindObjectOfType<Fox_Move>();
+		player = FindObjectOfType<PlayerMove>();
 		player.UpdateHunger((float)hungerStat);
 		Inventory.inventory.RemoveItem(this);
 	}

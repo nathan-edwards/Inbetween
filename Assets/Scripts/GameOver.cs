@@ -11,19 +11,19 @@ public class GameOver : MonoBehaviour
     private int count=0;
 
     public bool a;
-    private Fox_Move alive;
+    private PlayerMove alive;
 
     void Update(){
         // alive=FindObjectOfType<Fox_Move>();
         // a = alive.isAlive;
-        print(Fox_Move.isAlive);
+        print(PlayerMove.isAlive);
         GameIsOver();
     }
     
     public void GameIsOver(){
         //display game over just once
         Debug.Log("you died");
-        if (Fox_Move.isAlive == false && count==0){
+        if (PlayerMove.isAlive == false && count==0){
             count+=1;
             GameOverUI.SetActive(true);
         }

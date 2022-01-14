@@ -7,14 +7,14 @@ public class AssignCamera : MonoBehaviour
 {
 	Canvas inventory;
 	Transform healthHunger;
-	Fox_Move player;
+	PlayerMove player;
 	GameObject portal, healthHunger2;
 
     // Start is called before the first frame update
     void Start()
     {
 		//find player object
-		player = GameObject.FindWithTag("Player").GetComponent<Fox_Move>();
+		player = GameObject.FindWithTag("Player").GetComponent<PlayerMove>();
 
 		//find canvas that displays inventory
 		//assign biome 2 camera to canvas
@@ -33,7 +33,7 @@ public class AssignCamera : MonoBehaviour
 		//assign health hunger bars to transition biomes script using code
 		//since it cant be done via inspector
 		healthHunger2= GameObject.FindWithTag("Health");
-		portal.GetComponent<transitionBiomes>().canvasUI = healthHunger2;
+		portal.GetComponent<TransitionBiomes>().canvasUI = healthHunger2;
 
 		
     }

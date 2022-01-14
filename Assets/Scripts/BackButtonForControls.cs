@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class backButtonForControls : MonoBehaviour
+public class BackButtonForControls : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject controlsUI;
@@ -16,8 +16,8 @@ public class backButtonForControls : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C)){
             if (GamePaused){
                 Resume();
-            } else {
-            Debug.Log("Controls visible + game paused");
+            } else { 
+                Debug.Log("Controls visible + game paused");
                 Pause();
             }
         } 

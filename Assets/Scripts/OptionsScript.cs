@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Options_Script : MonoBehaviour
+public class OptionsScript : MonoBehaviour
 {
     public static int level;
     public static int damagerate;

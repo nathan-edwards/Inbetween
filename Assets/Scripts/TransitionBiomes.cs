@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class transitionBiomes : MonoBehaviour
+public class TransitionBiomes : MonoBehaviour
 {	
 	public GameObject canvasUI;
     
