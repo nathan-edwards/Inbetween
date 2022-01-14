@@ -48309,18 +48309,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156681960}
     m_Modifications:
-    - target: {fileID: 1309746800348061619, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1631926766}
-    - target: {fileID: 4690969330290601195, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690969330449182939, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 76
-      objectReference: {fileID: 0}
     - target: {fileID: 4690969331641114780, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -48405,38 +48393,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4690969331641114977, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690969331641114977, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
-      propertyPath: m_IgnoreReversedGraphics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690969331641114978, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690969331641114979, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4690969331641114983, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
       propertyPath: m_Name
       value: Canvas_Pause
       objectReference: {fileID: 0}
-    - target: {fileID: 4690969331641114983, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690969331941808243, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 125.2887
-      objectReference: {fileID: 0}
-    - target: {fileID: 6594079629473016945, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1631926766}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64f79e112f9df428cbd7eff9e94f5da4, type: 3}
 --- !u!224 &4690969331123522973 stripped

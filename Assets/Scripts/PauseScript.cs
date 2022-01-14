@@ -28,6 +28,10 @@ public class PauseScript : MonoBehaviour
         Time.timeScale =0f;
         GamePaused= true;
     }
+    
+    public void Options(){
+        SceneManager.LoadScene(4);
+    }
 
     public void Resume(){
         pauseMenuUI.SetActive(false);
