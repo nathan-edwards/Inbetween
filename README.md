@@ -11,7 +11,8 @@ Controls:
 - Movement - WASD or Directional Arrows
 - Sprint - WASD or Directionals Arrows + Z
 - Attack - Spacebar
-- Inventory (open/close) - Q
+- Inventory (open/close) - Q (+ mouse for switching between inventory and crafting tabs)
+- Pause - P
 
 # Group Members
 
