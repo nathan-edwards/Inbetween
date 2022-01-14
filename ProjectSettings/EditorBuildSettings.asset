@@ -18,6 +18,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene 2/Biome 2.unity
     guid: 1b85b0cd9c5e4fc4c99db093b3c96684
   - enabled: 1
-    path: Assets/Scenes/options.unity
+    path: Assets/Scenes/Options/options.unity
     guid: f31598ff7c1ee4d1980ae65614802d22
   m_configObjects: {}
