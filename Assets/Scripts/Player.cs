@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class PlayerMove : MonoBehaviour {
+public class Player : MonoBehaviour {
 
     public float dieCount,speed,jumpForce;
 	public bool running,up,down,jumping,crouching,attacking,special,walking;
@@ -18,7 +18,7 @@ public class PlayerMove : MonoBehaviour {
 	public static bool isAlive;
 
 	//character's needs
-    private int health;
+    public int health;
     public int maxHealth = 100;
     private float hunger;
     public float maxHunger = 100;

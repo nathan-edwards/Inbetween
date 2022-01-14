@@ -11,12 +11,12 @@ public class Attack : MonoBehaviour
     public int attackDamage=20;
     private Rigidbody rb;
     private SpriteRenderer sp;
-    PlayerMove player;
+    Player player;
     void Start(){
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
 		sp=GetComponent<SpriteRenderer>();
-        player = FindObjectOfType<PlayerMove>();
+        player = FindObjectOfType<Player>();
     }
 
     public void AttackAction(){
