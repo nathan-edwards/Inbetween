@@ -13,13 +13,17 @@ public class BackButtonForControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		Debug.Log("here2");
         if (Input.GetKeyDown(KeyCode.C)){
             if (GamePaused){
                 Resume();
+				Debug.Log("here");
             } else { 
                 Debug.Log("Controls visible + game paused");
                 Pause();
+				Debug.Log("here1");
             }
+			Debug.Log("here3");
         } 
     }
 
