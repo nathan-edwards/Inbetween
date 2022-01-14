@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class Fox_Move : MonoBehaviour {
 
     public float dieCount,speed,jumpForce;
-	public bool running,up,down,jumping,crouching,attacking,special,walking, swordOn;
+	public bool running,up,down,jumping,crouching,attacking,special,walking;
+	public bool swordOn;
     private Rigidbody rb;
     private Animator anim;
 	private SpriteRenderer sp;
@@ -64,8 +65,7 @@ public class Fox_Move : MonoBehaviour {
 		
 	}
 	void Update(){
-		
-        // Debug.Log(Options_Script.level);
+		Debug.Log("sword is on "+swordOn);
 	}
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -155,11 +155,11 @@ public class Fox_Move : MonoBehaviour {
 
 	void Attack(){																//I activated the attack animation and when the 
 		if (Input.GetKeyDown(KeyCode.Space)){
-			if(rb.velocity.x<0){
-				sp.flipX=true;
-			}else if(rb.velocity.x>0){
-				sp.flipX=false;
-			}
+			// if(rb.velocity.x<0){
+			// 	sp.flipX=true;
+			// }else if(rb.velocity.x>0){
+			// 	sp.flipX=false;
+			// }
 			rb.GetComponent<attack>().Attack();
 			// Play Player Attack Sound
 			SoundManager.PlaySound(SoundManager.Sound.PlayerAttack, player.position);
@@ -221,8 +221,6 @@ public class Fox_Move : MonoBehaviour {
 	}
 
 	void Dead(){
-		// dying animation
-		// isAlive=false;
 		if (dieCount==0){
 			dieCount+=1;
 			SoundManager.PlaySound(SoundManager.Sound.PlayerDeath, player.position);
@@ -281,8 +279,5 @@ public class Fox_Move : MonoBehaviour {
 			isAlive = false;	
 		}
 	}
-
-	// face the enemy when taking damage
-	// ,........
 
 }

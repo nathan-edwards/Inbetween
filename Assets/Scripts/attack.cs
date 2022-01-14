@@ -11,14 +11,19 @@ public class attack : MonoBehaviour
     public int attackDamage=20;
     private Rigidbody rb;
     private SpriteRenderer sp;
-
+    Fox_Move player;
     void Start(){
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
 		sp=GetComponent<SpriteRenderer>();
+        player = FindObjectOfType<Fox_Move>();
     }
 
     public void Attack(){
+         if (player.swordOn == true){
+             Debug.Log("haleluia sword on");
+             anim.SetBool("swordOn",true);
+        }
         anim.SetTrigger("Attack");
     // for 3d enemies
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
