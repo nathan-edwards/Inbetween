@@ -115,8 +115,7 @@ public class Fox_Move : MonoBehaviour {
 			SoundManager.PlaySound(SoundManager.Sound.PlayerMove, player.position);
 			
 		}
-		//chekc if falling
-		Fall();
+	
 		//Movement Animation
 		moveAnim();
 	}
@@ -165,23 +164,7 @@ public class Fox_Move : MonoBehaviour {
 			SoundManager.PlaySound(SoundManager.Sound.PlayerAttack, player.position);
         }
 	}
-	void Fall(){
 
-		//  if(rb.velocity.y>0 && up==false){
-        //     up=true;
-		// }else if(rb.velocity.y<0 && down==false){
-        //     down=true;
-		// 	up=true;
-        //     anim.SetTrigger("Down");
-		// 	print("down is "+ down);
-
-        // }else if(rb.velocity.y==0 && (up==true||down==true)){
-        //     up=false;
-        //     down=false;
-        //     anim.SetTrigger("Ground");
-		// 	print("down is "+ down);
-        // }
-	}
 	
 	void AttackEnd(){
 		attacking=false;
@@ -226,7 +209,6 @@ public class Fox_Move : MonoBehaviour {
 			SoundManager.PlaySound(SoundManager.Sound.PlayerDeath, player.position);
 			anim.SetTrigger("Dead");
 
-			// display game over
 		}
 	}
 
@@ -253,6 +235,10 @@ public class Fox_Move : MonoBehaviour {
 	public void UpdateHunger(float d){
         //make sure hunger doesn't go above max or below min
         hunger = Mathf.Clamp(hunger + d, 0, maxHunger);
+		if (hunger<=0){
+			UpdateHealth(-100);
+			Dead();
+		}
 		//update hunger bar
 		hungerBar.updateHungerBar(hunger);
     }
