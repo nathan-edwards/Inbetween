@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class GameAssets : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class GameAssets : MonoBehaviour
     }
 
     public SoundAudioClip[] soundAudioClipArray;
+    public AudioMixerGroup audioMixerGroup;
 
     // This will show in the inspector in the editor for assignment of sounds from the list given in SoundManager
     [System.Serializable]

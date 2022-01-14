@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class OptionsScript : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class OptionsScript : MonoBehaviour
     public GameObject easyUI;
     public GameObject mediumUI;
     public GameObject hardUI;
+    public AudioMixer audioMixer;
+    
     //starve faster
     //enemy attack range increased
     //enemy damage increased
@@ -20,6 +23,12 @@ public class OptionsScript : MonoBehaviour
         damagerate=5;
         attackRange=10;
     }
+
+    public void SetVolume(float volume)
+    {
+        audioMixer.SetFloat("volume", volume);
+    }
+    
     public void easyLevel(){
         easyUI.SetActive(true);
         mediumUI.SetActive(false);

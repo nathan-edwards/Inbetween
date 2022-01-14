@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public static class SoundManager
 {
@@ -24,7 +25,10 @@ public static class SoundManager
     private static Dictionary<Sound, float> soundTimerDictionary;
     private static GameObject oneShotGameObject;
     private static AudioSource oneShotAudioSource;
-    
+    private static AudioMixer _mixer = Resources.Load("MainMixer") as AudioMixer;
+    private static AudioMixerGroup _mixerGroup = _mixer.FindMatchingGroups(string.Empty)[0];
+
+
     // Initializes the dictionary to reference later
     public static void Initialize()
     {
@@ -32,6 +36,7 @@ public static class SoundManager
         soundTimerDictionary[Sound.PlayerMove] = 0f;
         soundTimerDictionary[Sound.PlayerHit] = 0f;
         soundTimerDictionary[Sound.EnemyAttack] = 0f;
+
     }
     
     // Function that plays the audio on the object this is called when a position for the sound is not required
@@ -45,7 +50,8 @@ public static class SoundManager
                 oneShotGameObject = new GameObject("One Shot Sound");
                 // Attaches a AudioSource component to the newly created Sound game object
                 oneShotAudioSource = oneShotGameObject.AddComponent<AudioSource>();
-                
+                oneShotAudioSource.outputAudioMixerGroup = _mixerGroup;
+
             }
             
             // Places the audio clip into the object and plays it once
@@ -66,6 +72,7 @@ public static class SoundManager
             AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
             // Places the audio clip into the object and plays it once
             audioSource.clip = GetAudioClip(sound);
+            audioSource.outputAudioMixerGroup = _mixerGroup;
             audioSource.Play();
             
             Object.Destroy(soundGameObject, audioSource.clip.length);
