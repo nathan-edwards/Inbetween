@@ -31,6 +31,7 @@ public static class SoundManager
         soundTimerDictionary = new Dictionary<Sound, float>();
         soundTimerDictionary[Sound.PlayerMove] = 0f;
         soundTimerDictionary[Sound.PlayerHit] = 0f;
+        soundTimerDictionary[Sound.EnemyAttack] = 0f;
     }
     
     // Function that plays the audio on the object this is called when a position for the sound is not required
@@ -107,6 +108,26 @@ public static class SoundManager
                     // A half a second delay is added between each sound play
                     float playerHitTimerMax = 1f;
                     if (lastTimePlayed + playerHitTimerMax < Time.time)
+                    {
+                        soundTimerDictionary[sound] = Time.time;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return true;
+                }
+            case Sound.EnemyAttack:
+                if (soundTimerDictionary.ContainsKey(sound))
+                {
+                    float lastTimePlayed = soundTimerDictionary[sound];
+                    // A half a second delay is added between each sound play
+                    float enemyAttackTimerMax = 1f;
+                    if (lastTimePlayed + enemyAttackTimerMax < Time.time)
                     {
                         soundTimerDictionary[sound] = Time.time;
                         return true;

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class Enemy : MonoBehaviour
     public Transform transform;
     public GameObject healthBarUI;
     public Slider slider;
+    public GameObject boss;
     private void Start()
     {
         currHealth = maxHealth;
@@ -41,6 +43,10 @@ public class Enemy : MonoBehaviour
         // animation for dying
         anim.SetBool("die",true);
         anim.SetTrigger("die");
+        if (gameObject.name.Contains("Boss"))
+        {
+            BossCode();
+        }
         //disable enemy after death
         Destroy(gameObject);
     }
@@ -49,5 +55,21 @@ public class Enemy : MonoBehaviour
     {
         float result = currHealth / maxHealth;
         return result;
+    }
+
+    void BossCode()
+    {
+        if (maxHealth > 100)
+        {
+            Vector3 position = transform.position;
+            GameObject split1 = Instantiate(boss, position, Quaternion.identity);
+            GameObject split2 = Instantiate(boss, position, Quaternion.identity);
+            Vector3 scaleChange = split1.transform.localScale / 2;
+            split1.transform.localScale = scaleChange;
+            split2.transform.localScale = scaleChange;
+            split1.GetComponent<Enemy>().maxHealth = maxHealth - 50;
+            split2.GetComponent<Enemy>().maxHealth = maxHealth - 50;
+        }
+        
     }
 }

@@ -6,7 +6,8 @@ using System.Collections;
  public class FollowPlayer : MonoBehaviour
  {
     private Animator anim;
-    public Transform player; // girl
+    // public Transform player; // girl
+    private Transform player;
     public float detectRange = 100; // this gets multiplied by itself to compare to a sqr magnitude check (instead of distance)
     public bool inRange = false;
     public float moveSpeed = 5f; // enemy speed
@@ -15,11 +16,14 @@ using System.Collections;
     public bool walking;
     float distsqr;
     private SpriteRenderer sp;
+    
+    
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         detectRange *= detectRange;
+        player = GameObject.FindWithTag("Player").transform;
     }
     
     void Start(){
