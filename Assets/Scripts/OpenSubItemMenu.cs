@@ -11,6 +11,8 @@ public class OpenSubItemMenu : MonoBehaviour
 {
 	public Transform craftingSlotsContainer;
 	public Transform inventorySlotsParentContainer;
+	public Transform craftItemResultProfile;
+	public Transform inventoryItemProfile;
 	
 	void Update(){
 		OpenInventory();
@@ -18,12 +20,22 @@ public class OpenSubItemMenu : MonoBehaviour
 
 	//make crafting visible when crafting menu title selected
     public void OpenCraftingFromInventory(){
+		//redraws item result profile so it's empty instead of displaying
+		//what the player selected the last time they opened the crafting menu
+		craftItemResultProfile.GetComponent<CraftItemResultProfile>().HideRecipeDetails();
+
+		//then make crafting menu visible
 		craftingSlotsContainer.parent.gameObject.SetActive(true);
 		inventorySlotsParentContainer.parent.gameObject.SetActive(false);
 	}
 
 	//make inventory visible when inventory title selected
 	public void OpenInventoryFromCrafting(){
+		//redraws item result profile so it's empty instead of displaying
+		//what the player selected the last time they opened the inventory menu
+		inventoryItemProfile.GetComponent<ItemProfile>().HideItemDetails();
+
+		//then make inventory visible
 		inventorySlotsParentContainer.parent.gameObject.SetActive(true);
 		craftingSlotsContainer.parent.gameObject.SetActive(false);
 	}
@@ -34,6 +46,7 @@ public class OpenSubItemMenu : MonoBehaviour
 		if(Input.GetKeyDown(KeyCode.Q) && inventorySlotsParentContainer.parent.gameObject.activeSelf == false){
 			//display
 			inventorySlotsParentContainer.parent.gameObject.SetActive(true);
+			inventoryItemProfile.GetComponent<ItemProfile>().HideItemDetails();
 
 			//pause game while open
 			Time.timeScale = 0f;
